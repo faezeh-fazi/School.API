@@ -1,0 +1,12 @@
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.deps.json
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.pdb
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.Contracts.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.Contracts.pdb
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csprojAssemblyReference.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.AssemblyInfoInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.AssemblyInfo.cs
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CoreCompileInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CopyComplete
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.pdb

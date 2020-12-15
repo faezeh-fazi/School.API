@@ -1,0 +1,9 @@
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.deps.json
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.pdb
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.AssemblyInfoInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.AssemblyInfo.cs
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.pdb
+C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csprojAssemblyReference.cache

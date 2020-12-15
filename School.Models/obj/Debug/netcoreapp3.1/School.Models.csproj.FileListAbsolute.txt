@@ -1,0 +1,8 @@
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.deps.json
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.pdb
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.AssemblyInfoInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.AssemblyInfo.cs
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csproj.CoreCompileInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.pdb

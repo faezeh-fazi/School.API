@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>School.API</name>
+    </assembly>
+    <members>
+        <member name="M:School.API.Controllers.AuthenticationController.Authenticate(School.DataTransferObject.AuthenticationReqest)">
+            <returns>return authentication result model which consist of success flag and token</returns>
+            
+        </member>
+    </members>
+</doc>
