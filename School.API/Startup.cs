@@ -37,8 +37,8 @@ namespace School.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiscDbContext context, UserManager<User> manager
-             , DiscDbContext context, UserManager<User> manager)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiscDbContext context, UserManager<User> manager, RoleManager<IdentityRole> roleManager)
+             
         {
             if (env.IsDevelopment())
             {
@@ -69,7 +69,7 @@ namespace School.API
             app.UseAuthentication();
             app.UseAuthorization();
 
-            DbInitializer.SeedData(context, manager, rolemanager);
+            DbInitializer.SeedData(context, manager, roleManager);
 
 
             app.UseEndpoints(endpoints =>
