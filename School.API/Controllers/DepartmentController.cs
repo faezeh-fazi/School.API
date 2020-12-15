@@ -6,7 +6,10 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using School.DataTransferObject;
 using School.DataTransferObject.Department;
+using School.Helpers;
 using School.Models;
 using School.Services.Main;
 
@@ -17,19 +20,38 @@ namespace School.API.Controllers
     {
         private IDepartmentService _context;
         private IMapper _mapper;
+        private LinkGenerator _link;
 
-        public DepartmentController(IDepartmentService context, IMapper mapper)
+        public DepartmentController(IDepartmentService context, IMapper mapper, LinkGenerator link)
         {
             _context = context;
             _mapper = mapper;
+            _link = link;
         }
         [HttpGet("/GetAlldepartments")]
 
-        public async Task<IActionResult> GetAllDepartments()
+        public async Task<IActionResult> GetAllDepartments(ResourceParameter parameter)
         {
-            var departments = await _context.GetAllDepartments();
-            var mapping = _mapper.Map<IEnumerable<DepartmentViewDto>>(departments);
-            return Ok(mapping);
+            var departments = await _context.GetAllDepartments(parameter);
+            var prevLink = departments.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
+            var nextPage = departments.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
+            var pageInfo = new PagingDto
+            {
+                totalCount = departments.Count,
+                pageSize = departments.PageSize,
+                totalPages = departments.TotalPages,
+                currentPages = departments.CurrentPage,
+                PrevLink = prevLink,
+                nextLink = nextPage,
+            };
+
+            var DepartmentMapping = new DepartmentPaging
+            {
+                Departments = _mapper.Map<IEnumerable<DepartmentViewDto>>(departments),
+                PagingInfo = pageInfo
+            };
+
+            return Ok(DepartmentMapping);
         }
 
 
@@ -96,9 +118,9 @@ namespace School.API.Controllers
             return Ok(department);
         }
 
-     
 
 
+        [Authorize(Roles = "Teacher")]
         [HttpDelete("deletedepartment/{departmentId}")]
         public async Task<IActionResult> DeleteDepartment(int departmentId)
         {
@@ -115,6 +137,47 @@ namespace School.API.Controllers
             return Ok("department Deleted");
         }
 
+        private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
+        {
+            switch (type)
+            {
+                case ResourceUriType.PreviousPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber - 1,
+                            PageSize = parameter.PageSize,
+                        });
 
-    }
+                case ResourceUriType.NextPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber + 1,
+                            PageSize = parameter.PageSize,
+                        });
+                case ResourceUriType.Current:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+                default:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+
+            }
+        }
+
+
+        }
 }

@@ -9,7 +9,7 @@ namespace School.DataTransferObject.Teacher
         public string TeacherName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
+        public int DepartmentId { get; set; }
 
 
     }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using School.Helpers;
 
 namespace School.Services.Main
 {
@@ -24,22 +25,26 @@ namespace School.Services.Main
         }
 
 
-
-        public async Task<IEnumerable<User>> GetAllStudents()
+        public async Task<PagedList<User>> GetAllStudents(ResourceParameter parameter)
         {
-            var res = await _userManager.GetUsersInRoleAsync("Student");
-
-            return res;
+            var res = _userManager.Users.Include(x => x.Department).AsQueryable();
+            if (!string.IsNullOrEmpty(parameter.NameFilter))
+            {
+                res = res.Where(x => x.UserName.Contains(parameter.NameFilter));
+            }
+            return await PagedList<User>.CreateAsync(res, parameter.PageNumber, parameter.PageSize);
         }
 
 
-        public async Task<IEnumerable<User>> GetAllTeachers()
+        public async Task<PagedList<User>> GetAllTeachers(ResourceParameter parameter)
         {
-            var res = await _userManager.GetUsersInRoleAsync("Teacher");
-
-            return res;
+            var res = _userManager.Users.Include(x => x.Department).AsQueryable();
+            if (!string.IsNullOrEmpty(parameter.NameFilter))
+            {
+                res = res.Where(x => x.UserName.Contains(parameter.NameFilter));
+            }
+            return await PagedList<User>.CreateAsync(res, parameter.PageNumber, parameter.PageSize);
         }
-
 
 
         public async Task<User> GetUserById(string UserId)
@@ -81,7 +86,6 @@ namespace School.Services.Main
         }
 
        
-
         public async Task<bool> RemoveUser(User user)
         {
             _context.User.Remove(user);

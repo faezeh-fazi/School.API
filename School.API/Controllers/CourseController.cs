@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using School.DataTransferObject;
 using School.DataTransferObject.Course;
 using School.DataTransferObject.TimeTable;
+using School.Helpers;
 using School.Models;
 using School.Services.Main;
 
@@ -19,21 +22,40 @@ namespace School.API.Controllers
         private ICourseService _context;
         private IMapper _mapper;
         private ITimeTableService _timeTableService;
+        private LinkGenerator _link;
 
-        public CourseController(ICourseService context, IMapper mapper, ITimeTableService timeTableService)
+        public CourseController(ICourseService context, IMapper mapper, ITimeTableService timeTableService, LinkGenerator link)
         {
             _context = context;
             _mapper = mapper;
             _timeTableService = timeTableService;
+            _link = link;
         }
 
         [HttpGet("/GetAllCourses")]
 
-        public async Task<IActionResult> GetAllCourses()
+        public async Task<IActionResult> GetAllCourses(ResourceParameter parameter)
         {
-            var courses = await _context.GetAllCourses();
-            var mapping = _mapper.Map <IEnumerable<CourseViewDto>>(courses);
-            return Ok(mapping);
+            var courses = await _context.GetAllCourses(parameter);
+            var prevLink = courses.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
+            var nextPage = courses.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
+            var pageInfo = new PagingDto
+            {
+                totalCount = courses.Count,
+                pageSize = courses.PageSize,
+                totalPages = courses.TotalPages,
+                currentPages = courses.CurrentPage,
+                PrevLink = prevLink,
+                nextLink = nextPage,
+            };
+
+            var CourseMapping = new CoursePaging
+            {
+                Courses = _mapper.Map<IEnumerable<CourseViewDto>>(courses),
+                PagingInfo = pageInfo
+            };
+
+            return Ok(CourseMapping);
         }
 
 
@@ -234,6 +256,46 @@ namespace School.API.Controllers
         }
 
 
-    }
+        private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
+        {
+            switch (type)
+            {
+                case ResourceUriType.PreviousPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber - 1,
+                            PageSize = parameter.PageSize,
+                        });
+
+                case ResourceUriType.NextPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber + 1,
+                            PageSize = parameter.PageSize,
+                        });
+                case ResourceUriType.Current:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+                default:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+
+            }
+        }
 }
+    }
 

@@ -8,5 +8,6 @@ namespace School.DataTransferObject.Student
     {
         public string StudentName { get; set; }
         
+
     }
 }

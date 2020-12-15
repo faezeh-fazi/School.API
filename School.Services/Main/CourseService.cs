@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using School.DataAccess;
+using School.Helpers;
 using School.Models;
 
 namespace School.Services.Main
@@ -17,13 +18,19 @@ namespace School.Services.Main
             _context = context;
         }
 
-        public async Task<IEnumerable<Course>> GetAllCourses()
+        public async Task<PagedList<Course>> GetAllCourses(ResourceParameter parameter)
         {
-            return await _context
+           var courses= _context
                 .Course
                 .Include(x=>x.TimeTables)
                 .Include(x=>x.Department)
-                .ToListAsync();
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(parameter.NameFilter))
+            {
+                courses = courses.Where(x => x.CourseName.Contains(parameter.NameFilter));
+            }
+            return await PagedList<Course>.CreateAsync(courses, parameter.PageNumber, parameter.PageSize);
         }
 
 

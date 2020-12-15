@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using School.DataTransferObject;
 using School.DataTransferObject.Student;
 using School.DataTransferObject.Teacher;
 using School.Extensions;
+using School.Helpers;
 using School.Models;
 using School.Services.Main;
 
@@ -20,25 +22,46 @@ namespace School.API.Controllers
         private IMapper _mapper;
         private SignInManager<User> _signInManager;
         private UserManager<User> _userManager;
+        private LinkGenerator _link;
 
-        public StudentController(IUserService context, IMapper mapper, SignInManager<User> signInManager, UserManager<User> userManager)
+        public StudentController(IUserService context, IMapper mapper, SignInManager<User> signInManager,
+            UserManager<User> userManager, LinkGenerator link)
         {
             _context = context;
             _mapper = mapper;
             _signInManager = signInManager;
             _userManager = userManager;
+            _link = link;
         }
 
         [HttpGet("/GetAllStudents")]
-        public async Task<IActionResult> GetAllStudents()
+        public async Task<IActionResult> GetAllStudents(ResourceParameter parameter)
         {
-            var students = await _context.GetAllStudents();
-            var mapping = _mapper.Map<IEnumerable<StudentViewDto>>(students);
-           
-            return Ok(mapping);
+            var students = await _context.GetAllStudents(parameter);
+            var role = await _userManager.GetUsersInRoleAsync("Student");
+            var prevLink = students.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
+            var nextPage = students.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
+            var pageInfo = new PagingDto
+            {
+                totalCount = students.Count,
+                pageSize = students.PageSize,
+                totalPages = students.TotalPages,
+                currentPages = students.CurrentPage,
+                PrevLink = prevLink,
+                nextLink = nextPage,
+            };
+
+            var DepartmentMapping = new StudentPaging
+            {
+                Students = _mapper.Map<IEnumerable<StudentViewDto>>(role),
+                PagingInfo = pageInfo
+            };
+
+            return Ok(DepartmentMapping);
+
         }
 
- 
+
         [HttpGet("/api/getStudent/{userId}")]
         public async Task<IActionResult> GetStudentById(string userId)
         {
@@ -87,7 +110,6 @@ namespace School.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            
 
             var user = _mapper.Map<User>(creationDto);
             if (user == null)
@@ -98,13 +120,52 @@ namespace School.API.Controllers
             user.UserName = creationDto.UserName.ToLower();
 
 
-            var result = await _context.AddUser(user, creationDto.Password, creationDto.Role);
+            var result = await _context.AddUser(user, creationDto.Password, "Student");
             if (result == false)
                 return BadRequest("failed to register");
 
             await _signInManager.SignInAsync(user, isPersistent: false);
             return Ok(result);
+        }
+        private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
+        {
+            switch (type)
+            {
+                case ResourceUriType.PreviousPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber - 1,
+                            PageSize = parameter.PageSize,
+                        });
 
+                case ResourceUriType.NextPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber + 1,
+                            PageSize = parameter.PageSize,
+                        });
+                case ResourceUriType.Current:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+                default:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+
+            }
         }
     }
 }

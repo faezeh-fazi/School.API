@@ -5,11 +5,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using School.DataTransferObject;
 using School.DataTransferObject.Student;
 using School.DataTransferObject.StudentCourse;
 using School.DataTransferObject.StudentGrade;
 using School.DataTransferObject.StudentTimeTable;
 using School.Extensions;
+using School.Helpers;
 using School.Models;
 using School.Services.Main;
 
@@ -21,28 +24,45 @@ namespace School.API.Controllers
         private IMapper _mapper;
         private IUserService _userService;
         private ITimeTableService _timeTableService;
+        private LinkGenerator _link;
 
-        public StudentCourseController(IStudentCourseService context, IMapper mapper, IUserService userService, ITimeTableService timeTableService)
+        public StudentCourseController(IStudentCourseService context, IMapper mapper, IUserService userService, ITimeTableService timeTableService, LinkGenerator link)
         {
             _context = context;
             _mapper = mapper;
             _userService = userService;
             _timeTableService = timeTableService;
+            _link = link;
         }
 
 
         [Authorize(Roles = "Student")]
         [HttpGet("allStudentCourses/{UserId}")]
-        public async Task<IActionResult> GetAllStudentCourses(string UserId)
+        public async Task<IActionResult> GetAllStudentCourses(ResourceParameter parameter, string UserId)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("Not Allowed!");
-        
-                var courses = await _context.GetAllStudentCourses(UserId);
-                var mapping = _mapper.Map<IEnumerable<StudentCourseViewDto>>(courses);
 
-                return Ok(mapping);
-            
+            var courses = await _context.GetAllStudentCourses(parameter, UserId);
+            var prevLink = courses.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
+            var nextPage = courses.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
+            var pageInfo = new PagingDto
+            {
+                totalCount = courses.Count,
+                pageSize = courses.PageSize,
+                totalPages = courses.TotalPages,
+                currentPages = courses.CurrentPage,
+                PrevLink = prevLink,
+                nextLink = nextPage,
+            };
+
+            var Mapping = new StudentCoursePaging
+            {
+                StudentCourses = _mapper.Map<IEnumerable<StudentCourseViewDto>>(courses),
+                PagingInfo = pageInfo
+            };
+            return Ok(Mapping);
+
         }
 
 
@@ -52,34 +72,34 @@ namespace School.API.Controllers
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("Not Allowed!");
-        
-                var courses = await _timeTableService.GetStudentTimeTable(UserId);
 
-                var mapping = _mapper.Map<IEnumerable<StudentTimetableViewDto>>(courses);
-                return Ok(mapping);
-            
+            var courses = await _timeTableService.GetStudentTimeTable(UserId);
+
+            var mapping = _mapper.Map<IEnumerable<StudentTimetableViewDto>>(courses);
+            return Ok(mapping);
+
         }
 
         [Authorize(Roles = "Student")]
         [HttpGet("/api/GetStudentCourse/{CourseId}")]
-        public async Task<IActionResult> GetStudentCourseById( int CourseId)
+        public async Task<IActionResult> GetStudentCourseById(int CourseId)
         {
-           
+
             var course = await _context.GetStudentCourseById(CourseId, HttpContext.GetUserId());
             var Exist = await _context.CourseExists(CourseId, HttpContext.GetUserId());
             if (Exist == false)
                 return BadRequest("This Course doesnt exist in your course list!");
-            var mapping = _mapper.Map<StudentCourseViewDto>(course);      
+            var mapping = _mapper.Map<StudentCourseViewDto>(course);
             return Ok(mapping);
         }
 
         [Authorize(Roles = "Student")]
         [HttpGet("StudentGrades/")]
-        public async Task<IActionResult> GetStudentGrades(string UserId)
+        public async Task<IActionResult> GetStudentGrades(ResourceParameter parameter, string UserId)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("You are not allow to see the Grades!");
-            var courses = await _context.GetAllStudentCourses(UserId);
+            var courses = await _context.GetAllStudentCourses(parameter, UserId);
             var mapping = _mapper.Map<IEnumerable<StudentGradeViewDto>>(courses);
 
             return Ok(mapping);
@@ -87,12 +107,12 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpGet("GetStudentTranscript/")]
-          public async Task<IActionResult> GetStudentTranscript(string StudentId)
-          {
+        public async Task<IActionResult> GetStudentTranscript(ResourceParameter parameter, string StudentId)
+        {
             if (StudentId != HttpContext.GetUserId())
                 return BadRequest("You are not allow to see the Transcript!");
             var users = await _context.GetStudentTranscript(StudentId);
-            var courses = await _context.GetAllStudentCourses(StudentId);
+            var courses = await _context.GetAllStudentCourses(parameter, StudentId);
 
             var mapping = _mapper.Map<StudentTranscriptDto>(users);
 
@@ -147,7 +167,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpPost("/api/Add/StudentCourse/")]
-        public async Task<IActionResult> AddStudentCourse([FromBody] StudentCourseCreationDto course)
+        public async Task<IActionResult> AddStudentCourse(ResourceParameter parameter, [FromBody] StudentCourseCreationDto course)
         {
             if (course == null)
                 return BadRequest();
@@ -158,7 +178,7 @@ namespace School.API.Controllers
                 return BadRequest("Not Allow to Add Course for another Teacher!");
             else
             {
-                var courses = await _context.GetAllStudentCourses(course.UserId);
+                var courses = await _context.GetAllStudentCourses(parameter, course.UserId);
                 var mapping = _mapper.Map<IEnumerable<StudentCourseViewDto>>(courses);
 
                 if (mapping.Count() >= 6)
@@ -180,11 +200,11 @@ namespace School.API.Controllers
                             return BadRequest("Has Clash");
                     }
                 }
-                var Exist = await _context.CourseExists(EntityMapper.CourseId,course.UserId);
+                var Exist = await _context.CourseExists(EntityMapper.CourseId, course.UserId);
                 if (Exist == true)
                     return BadRequest("Student Already has the course");
 
-               
+
                 var result = await _context.AddStudentCourse(EntityMapper);
                 if (result == false)
                     return BadRequest("Cant add the course for user");
@@ -196,22 +216,61 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpDelete("DeleteStudentCourse/{courseId}")]
-        public async Task<IActionResult>DeleteStudentCourse(int courseId)
+        public async Task<IActionResult> DeleteStudentCourse(int courseId)
         {
 
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var result = await _context.GetStudentCourseById(courseId,HttpContext.GetUserId());
+            var result = await _context.GetStudentCourseById(courseId, HttpContext.GetUserId());
             if (result == null)
                 return BadRequest("Course with this ID Doesn't Exist in your course list");
 
-           
+
             await _context.RemoveStudentCourse(result);
 
             return Ok("Course Deleted!");
         }
+        private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
+        {
+            switch (type)
+            {
+                case ResourceUriType.PreviousPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber - 1,
+                            PageSize = parameter.PageSize,
+                        });
 
+                case ResourceUriType.NextPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber + 1,
+                            PageSize = parameter.PageSize,
+                        });
+                case ResourceUriType.Current:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+                default:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+
+            }
+        }
     }
 }
 

@@ -50,8 +50,6 @@ namespace School.Services.Main
   
             }
 
-            /*            return timeTable.OrderBy(x => x.Day).ThenBy(x => x.StartTime.ToString("hh:mm tt"));
-            */
             return timeTable.OrderBy(x => x.Day).ThenBy(x => DateTime.Parse(x.StartTime.ToString("h:mm tt"))).ToList();
 
         }
@@ -76,8 +74,6 @@ namespace School.Services.Main
 
             }
 
-            /*            return timeTable.OrderBy(x => x.Day).ThenBy(x => x.StartTime.ToString("hh:mm tt"));
-            */
             return timeTable.OrderBy(x => x.Day).ThenBy(x => DateTime.Parse(x.StartTime.ToString("h:mm tt"))).ToList();
 
         }

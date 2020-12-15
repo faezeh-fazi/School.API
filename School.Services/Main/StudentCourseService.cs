@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using School.DataAccess;
+using School.Helpers;
 using School.Models;
 using System;
 using System.Collections.Generic;
@@ -19,15 +20,21 @@ namespace School.Services.Main
             _context = context;
         }
 
-        public async Task<IEnumerable<StudentCourse>> GetAllStudentCourses(string StudentId)
+        public async Task<PagedList<StudentCourse>> GetAllStudentCourses(ResourceParameter parameter, string StudentId)
         {
-         
-           return await _context
-                .StudentCourse
-                .Include(x => x.Course)
-                .ThenInclude(x=>x.TimeTables)
-                .Where(x => x.UserId == StudentId)   
-                .ToListAsync();
+
+            var studentCourse = _context
+                 .StudentCourse
+                 .Include(x => x.Course)
+                 .ThenInclude(x => x.TimeTables)
+                 .Where(x => x.UserId == StudentId)
+                 .AsQueryable();
+
+            if (!string.IsNullOrEmpty(parameter.NameFilter))
+            {
+                studentCourse = studentCourse.Where(x => x.Course.CourseName.Contains(parameter.NameFilter));
+            }
+            return await PagedList<StudentCourse>.CreateAsync(studentCourse, parameter.PageNumber, parameter.PageSize);
         }
 
         public async Task<StudentCourse> GetStudentCourseById(int CourseId,string StudentId)

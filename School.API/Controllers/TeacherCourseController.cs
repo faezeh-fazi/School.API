@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using School.DataTransferObject;
 using School.DataTransferObject.Course;
 using School.DataTransferObject.StudentCourse;
 using School.DataTransferObject.StudentGrade;
@@ -12,6 +14,7 @@ using School.DataTransferObject.Teacher;
 using School.DataTransferObject.TeacherCourse;
 using School.DataTransferObject.TeacherTimeTable;
 using School.Extensions;
+using School.Helpers;
 using School.Models;
 using School.Services.Main;
 
@@ -19,32 +22,52 @@ namespace School.API.Controllers
 {
     public class TeacherCourseController : ControllerBase
     {
-        
+
         private ITeacherCourseService _context;
         private IMapper _mapper;
         private IUserService _userService;
         private ITimeTableService _timeTableService;
         private IStudentCourseService _studentCourseService;
+        private LinkGenerator _link;
 
-        public TeacherCourseController(IStudentCourseService studentCourseService, ITeacherCourseService context, IMapper mapper, IUserService userService, ITimeTableService timeTableService)
+        public TeacherCourseController(IStudentCourseService studentCourseService, ITeacherCourseService context, 
+            IMapper mapper, IUserService userService, ITimeTableService timeTableService, LinkGenerator link)
         {
             _context = context;
             _mapper = mapper;
             _userService = userService;
             _timeTableService = timeTableService;
             _studentCourseService = studentCourseService;
+            _link = link;
         }
 
         [Authorize(Roles = "Teacher")]
         [HttpGet("allTeacherCourses/{UserId}")]
-        public async Task<IActionResult> GetAllTeacherCourses(string UserId)
+        public async Task<IActionResult> GetAllTeacherCourses(ResourceParameter parameter, string UserId)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("Not Allowed!");
 
-            var courses = await _context.GetAllTeacherCourses(UserId);
-            var mapping = _mapper.Map<IEnumerable<TeacherCourseViewDto>>(courses);
-            return Ok(mapping);
+            var courses = await _context.GetAllTeacherCourses(parameter, UserId);
+            var prevLink = courses.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
+            var nextPage = courses.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
+            var pageInfo = new PagingDto
+            {
+                totalCount = courses.Count,
+                pageSize = courses.PageSize,
+                totalPages = courses.TotalPages,
+                currentPages = courses.CurrentPage,
+                PrevLink = prevLink,
+                nextLink = nextPage,
+            };
+
+            var Mapping = new TeacherCoursePaging
+            {
+                TeacherCourses = _mapper.Map<IEnumerable<TeacherCourseViewDto>>(courses),
+                PagingInfo = pageInfo
+            };
+            return Ok(Mapping);
+
         }
 
         [Authorize(Roles = "Teacher")]
@@ -94,15 +117,15 @@ namespace School.API.Controllers
                 {
                     foreach (var cs in timeTables)
                     {
-                      if  ((cs.Day == st.Day) && ((cs.StartTime >= st.StartTime) && (cs.StartTime <= st.EndTime))
-                      || ((cs.Day == st.Day) && (cs.StartTime <= st.StartTime) && (cs.StartTime >= st.EndTime))
-                      || ((cs.Day == st.Day) && (cs.EndTime >= st.StartTime) && (cs.EndTime <= st.EndTime))
-                      || ((cs.Day == st.Day) && (cs.EndTime <= st.StartTime) && (cs.EndTime >= st.EndTime)))
+                        if ((cs.Day == st.Day) && ((cs.StartTime >= st.StartTime) && (cs.StartTime <= st.EndTime))
+                        || ((cs.Day == st.Day) && (cs.StartTime <= st.StartTime) && (cs.StartTime >= st.EndTime))
+                        || ((cs.Day == st.Day) && (cs.EndTime >= st.StartTime) && (cs.EndTime <= st.EndTime))
+                        || ((cs.Day == st.Day) && (cs.EndTime <= st.StartTime) && (cs.EndTime >= st.EndTime)))
 
                             return BadRequest("Has Clash");
                     }
                 }
-                var Exist = await _context.CourseExists(EntityMapper.CourseId,HttpContext.GetUserId());
+                var Exist = await _context.CourseExists(EntityMapper.CourseId, HttpContext.GetUserId());
                 if (Exist == true)
                     return BadRequest("Teacher Already has the course");
 
@@ -118,7 +141,7 @@ namespace School.API.Controllers
         [HttpPut("/api/Add/StudentGrade/")]
         public async Task<IActionResult> AddStudentGrades(string StudentId, int CourseId, [FromBody] StudentGradeUpdateDto grade)
         {
-          
+
             if (grade == null)
                 return BadRequest();
             if (!ModelState.IsValid)
@@ -184,7 +207,47 @@ namespace School.API.Controllers
 
             return Ok("Course Deleted");
         }
-    }
 
+        private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
+        {
+            switch (type)
+            {
+                case ResourceUriType.PreviousPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber - 1,
+                            PageSize = parameter.PageSize,
+                        });
+
+                case ResourceUriType.NextPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber + 1,
+                            PageSize = parameter.PageSize,
+                        });
+                case ResourceUriType.Current:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+                default:
+                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+
+            }
+        }
+    }
 }
  
