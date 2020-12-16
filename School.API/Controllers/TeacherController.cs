@@ -53,13 +53,13 @@ namespace School.API.Controllers
                 nextLink = nextPage,
             };
 
-            var DepartmentMapping = new StudentPaging
+            var Mapping = new TeacherPaging
             {
-                Students = _mapper.Map<IEnumerable<StudentViewDto>>(role),
+                Teachers = _mapper.Map<IEnumerable<TeacherViewDto>>(role),
                 PagingInfo = pageInfo
             };
 
-            return Ok(DepartmentMapping);
+            return Ok(Mapping);
         }
 
         [HttpGet("/api/getTeacher/{userId}")]
