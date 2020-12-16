@@ -67,7 +67,6 @@ namespace School.Services.Main
                     
                 };
             }
-            response.Role = _userManager.GetRolesAsync(user).Result[0];
 
 
             return await GenerateAuthenticationResultForUserAsync(user);
