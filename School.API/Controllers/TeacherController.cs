@@ -104,6 +104,8 @@ namespace School.API.Controllers
             return BadRequest("Couldnt update");
 
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost("/api/TeacherRegister")]
         [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
         public async Task<IActionResult> AddTeacher([FromBody] TeacherCreationDto creationDto)
@@ -126,8 +128,31 @@ namespace School.API.Controllers
             return Ok(result);
 
         }
-        [Authorize(Roles = "Teacher")]
-        [HttpPost("/api/TeacherDepartment")]
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("/api/AdminRegister")]
+        [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddAdmin([FromBody] AdminCreationDto creationDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = _mapper.Map<User>(creationDto);
+
+            user.Name = creationDto.AdminName.ToLower();
+            user.UserName = creationDto.UserName.ToLower();
+
+            var result = await _context.AddUser(user, creationDto.Password, "Admin");
+            if (result == false)
+                return BadRequest("failed to register");
+
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            return Ok(result);
+
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("/api/AddDepartment")]
         public async Task<IActionResult> AddTeacherDepartment(string TeacherId, [FromBody] TeacherDepartmentDto creationDto)
         {
             if (!ModelState.IsValid)

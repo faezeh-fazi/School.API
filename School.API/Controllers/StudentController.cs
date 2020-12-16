@@ -74,7 +74,7 @@ namespace School.API.Controllers
             return BadRequest("User does not exist!");
         }
 
-
+        [Authorize(Roles ="Student")]
         [HttpPut("/api/UpdateStudent")]
         public async Task<IActionResult> UpdateStudent(string userId, [FromBody] StudentUpdateDto stdUpdate)
         {
@@ -103,7 +103,7 @@ namespace School.API.Controllers
             return BadRequest("Couldnt update ");
 
         }
-
+        [Authorize(Roles ="Admin")]
         [HttpPost("/api/StudentRegister")]
         [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
         public async Task<IActionResult> AddStudent([FromBody] StudentCreationDto creationDto)

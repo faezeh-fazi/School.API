@@ -66,7 +66,7 @@ namespace School.API.Controllers
             return Ok(mapping);
         }
 
-        [Authorize(Roles="Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("/AddDepartment")]
         public async Task<IActionResult> AddDepartment([FromBody] DepartmentCreationDto department)
         {
@@ -92,7 +92,7 @@ namespace School.API.Controllers
         }
 
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("updatedepartment/{departmentId}")]
         public async Task<IActionResult> UpdateDepartment(int departmentId, [FromBody] DepartmentUpdateDto department)
         {
@@ -120,7 +120,7 @@ namespace School.API.Controllers
 
 
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("deletedepartment/{departmentId}")]
         public async Task<IActionResult> DeleteDepartment(int departmentId)
         {

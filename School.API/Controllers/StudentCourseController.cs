@@ -38,7 +38,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpGet("allStudentCourses/{UserId}")]
-        public async Task<IActionResult> GetAllStudentCourses(ResourceParameter parameter, string UserId)
+        public async Task<IActionResult> GetAllStudentCourses(string UserId,ResourceParameter parameter)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("Not Allowed!");
@@ -95,7 +95,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpGet("StudentGrades/")]
-        public async Task<IActionResult> GetStudentGrades(ResourceParameter parameter, string UserId)
+        public async Task<IActionResult> GetStudentGrades(string UserId,ResourceParameter parameter)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("You are not allow to see the Grades!");
@@ -107,7 +107,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpGet("GetStudentTranscript/")]
-        public async Task<IActionResult> GetStudentTranscript(ResourceParameter parameter, string StudentId)
+        public async Task<IActionResult> GetStudentTranscript(string StudentId,ResourceParameter parameter)
         {
             if (StudentId != HttpContext.GetUserId())
                 return BadRequest("You are not allow to see the Transcript!");
@@ -167,7 +167,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpPost("/api/Add/StudentCourse/")]
-        public async Task<IActionResult> AddStudentCourse(ResourceParameter parameter, [FromBody] StudentCourseCreationDto course)
+        public async Task<IActionResult> AddStudentCourse([FromBody] StudentCourseCreationDto course,ResourceParameter parameter)
         {
             if (course == null)
                 return BadRequest();

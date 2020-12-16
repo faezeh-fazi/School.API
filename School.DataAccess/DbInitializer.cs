@@ -40,6 +40,14 @@ namespace School.DataAccess
                 CreateAsync(role).Result;
             }
 
+            if (!roleManager.RoleExistsAsync("Admin").Result)
+            {
+                IdentityRole role = new IdentityRole();
+                role.Name = "Admin";
+                role.NormalizedName = "ADMIN";
+                IdentityResult roleResult = roleManager.
+                CreateAsync(role).Result;
+            }
 
         }
         public static void SeedUsers(DiscDbContext context, UserManager<User> userManager)
@@ -49,16 +57,17 @@ namespace School.DataAccess
             if (!context.Users.Any())
             {
                 User admin = new User();
-                admin.UserName = "Teacher";
+                admin.UserName = "Admin";
                 admin.Email = "user1@localhost";
                 admin.Name = "Administrator";
+                admin.IsActive = true;
 
 
                 IdentityResult result = userManager.CreateAsync(admin, "Disc123!").Result;
 
                 if (result.Succeeded)
                 {
-                    userManager.AddToRoleAsync(admin, "Teacher").Wait();
+                    userManager.AddToRoleAsync(admin, "Admin").Wait();
                 }
             }
         }

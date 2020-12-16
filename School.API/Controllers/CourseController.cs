@@ -72,7 +72,7 @@ namespace School.API.Controllers
         }
 
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("/AddCourse")]
         public async Task<IActionResult> AddCourse([FromBody] CourseCreationDto course)
         {
@@ -104,7 +104,7 @@ namespace School.API.Controllers
 
         }
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("/AddCourseToTimeTable")]
         public async Task<IActionResult> AddCourseToTimeTable([FromBody] TimeTableCreationDto course)
         {
@@ -142,7 +142,7 @@ namespace School.API.Controllers
 
         }
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("updatecourse/{courseId}")]
         public async Task<IActionResult> UpdateCourse(int courseId, [FromBody] CourseUpdateDto course)
         {
@@ -171,7 +171,7 @@ namespace School.API.Controllers
             return Ok(course);
         }
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("updateTimetable/{TimeTableId}")]
         public async Task<IActionResult> UpdateCourseTimeTable(int TimeTableId, [FromBody] TimeTableUpdateDto course)
         {
@@ -212,7 +212,7 @@ namespace School.API.Controllers
             return Ok("Timetable Updated");
         }
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("deletecourse/{courseId}")]
         public async Task<IActionResult> DeleteCourse(int courseId)
         {
@@ -232,7 +232,7 @@ namespace School.API.Controllers
             return Ok("Course Deleted");
         }
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("deleteTimeTable{TimeTableId}")]
         public async Task<IActionResult> DeleteCourseTimeTable(int TimeTableId)
         {

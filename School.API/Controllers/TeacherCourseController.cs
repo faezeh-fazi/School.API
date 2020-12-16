@@ -43,7 +43,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Teacher")]
         [HttpGet("allTeacherCourses/{UserId}")]
-        public async Task<IActionResult> GetAllTeacherCourses(ResourceParameter parameter, string UserId)
+        public async Task<IActionResult> GetAllTeacherCourses(string UserId,ResourceParameter parameter)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("Not Allowed!");

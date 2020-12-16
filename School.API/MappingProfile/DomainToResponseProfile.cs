@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 
 using Microsoft.AspNetCore.Mvc;
+using School.DataTransferObject;
 using School.DataTransferObject.Course;
 using School.DataTransferObject.Department;
 using School.DataTransferObject.Student;
@@ -171,8 +172,6 @@ namespace School.API.MappingProfile
 
 
 
-
-
             CreateMap<DepartmentUpdateDto, Course>();
             CreateMap<DepartmentCreationDto, Course>();
             CreateMap<Course, DepartmentViewDto>()
@@ -193,6 +192,8 @@ namespace School.API.MappingProfile
 
 
 
+            CreateMap<AdminCreationDto, User>();
+            
         }
     }
 }
