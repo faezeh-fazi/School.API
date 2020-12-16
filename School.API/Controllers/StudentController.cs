@@ -132,7 +132,7 @@ namespace School.API.Controllers
             switch (type)
             {
                 case ResourceUriType.PreviousPage:
-                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                    return _link.GetPathByAction(HttpContext, "GetAllStudents",
                         values: new
                         {
                             searcQuery = parameter.SearchQuery,
@@ -141,7 +141,7 @@ namespace School.API.Controllers
                         });
 
                 case ResourceUriType.NextPage:
-                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                    return _link.GetPathByAction(HttpContext, "GetAllStudents",
                         values: new
                         {
                             searcQuery = parameter.SearchQuery,
@@ -149,7 +149,7 @@ namespace School.API.Controllers
                             PageSize = parameter.PageSize,
                         });
                 case ResourceUriType.Current:
-                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                    return _link.GetPathByAction(HttpContext, "GetAllStudents",
                         values: new
                         {
                             searcQuery = parameter.SearchQuery,
@@ -157,7 +157,7 @@ namespace School.API.Controllers
                             PageSize = parameter.PageSize,
                         });
                 default:
-                    return _link.GetPathByAction(HttpContext, "GetAllCourses",
+                    return _link.GetPathByAction(HttpContext, "GetAllStudents",
                         values: new
                         {
                             searcQuery = parameter.SearchQuery,

@@ -63,9 +63,12 @@ namespace School.Services.Main
             {
                 return new AuthenticationResult
                 {
-                    Errors = new[] { "Username/password Combination are wrong" }
+                    Errors = new[] { "Username/password Combination are wrong" },
+                    
                 };
             }
+            response.Role = _userManager.GetRolesAsync(user).Result[0];
+
 
             return await GenerateAuthenticationResultForUserAsync(user);
         }
@@ -186,7 +189,8 @@ namespace School.Services.Main
             {
                 Success = true,
                 Token = tokenHandler.WriteToken(token),
-                RefreshToken = refreshToken.Token
+                RefreshToken = refreshToken.Token,
+                Role = userRoles.FirstOrDefault()
             };
         }
         private bool IsJwtWithValidSecurityAlgorithm(SecurityToken validatedToken)

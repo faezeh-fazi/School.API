@@ -10,6 +10,7 @@ using School.DataAccess;
 using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using School.Extensions;
 
 namespace School.API.Controllers
 {
@@ -44,6 +45,7 @@ namespace School.API.Controllers
         public async Task<IActionResult> Authenticate([FromBody] AuthenticationReqest ar)
         {
             var staff = await _context.AuthenticateUser(ar);
+      
             if (!staff.Success)
             {
                 _logger.LogError($"Failed Login attempt for {ar.Username}");
