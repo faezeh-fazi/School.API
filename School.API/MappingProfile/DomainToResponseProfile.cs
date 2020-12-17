@@ -47,7 +47,7 @@ namespace School.API.MappingProfile
             CreateMap<TeacherUpdateDto, User>();
             CreateMap<User, TeacherViewDto>()
                 .ForMember(dest => dest.TeacherName, m => m.MapFrom(src => src.Name))
-                .ForMember(dest => dest.DepartmentName, m => m.MapFrom(src => src.Department.Name));
+                .ForMember(dest => dest.Email, m => m.MapFrom(src => src.Email));
 
 
 
