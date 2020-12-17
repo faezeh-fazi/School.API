@@ -169,7 +169,8 @@ namespace School.API.MappingProfile
 
             CreateMap<DepartmentUpdateDto, Department>();
             CreateMap<DepartmentCreationDto, Department>();
-            CreateMap<Department, DepartmentViewDto>();
+            CreateMap<Department, DepartmentViewDto>()
+                .ForMember(dest => dest.DepartmentId, m => m.MapFrom(src => src.Id));
 
 
 
