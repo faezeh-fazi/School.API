@@ -44,7 +44,6 @@ namespace School.API.Controllers
                 PrevLink = prevLink,
                 nextLink = nextPage,
             };
-
             var DepartmentMapping = new DepartmentPaging
             {
                 Departments = _mapper.Map<IEnumerable<DepartmentViewDto>>(departments),

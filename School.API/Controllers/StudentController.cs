@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -34,30 +35,14 @@ namespace School.API.Controllers
             _link = link;
         }
 
-        [HttpGet("/GetAllStudents")]
-        public async Task<IActionResult> GetAllStudents(ResourceParameter parameter)
+        [HttpGet("/GetAllDepartmentStudents")]
+        public async Task<IActionResult> GetAllStudents(int DepartmentId)
         {
-            var students = await _context.GetAllStudents(parameter);
-            var role = await _userManager.GetUsersInRoleAsync("Student");
-            var prevLink = students.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
-            var nextPage = students.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
-            var pageInfo = new PagingDto
-            {
-                totalCount = students.Count,
-                pageSize = students.PageSize,
-                totalPages = students.TotalPages,
-                currentPages = students.CurrentPage,
-                PrevLink = prevLink,
-                nextLink = nextPage,
-            };
 
-            var DepartmentMapping = new StudentPaging
-            {
-                Students = _mapper.Map<IEnumerable<StudentViewDto>>(role),
-                PagingInfo = pageInfo
-            };
+                var students = await _context.GetAllDepartmentStudents(DepartmentId);
+                var mapping = _mapper.Map<IEnumerable<StudentViewDto>>(students);
 
-            return Ok(DepartmentMapping);
+                return Ok(mapping);
 
         }
 

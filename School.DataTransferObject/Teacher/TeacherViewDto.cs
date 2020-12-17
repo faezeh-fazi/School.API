@@ -10,6 +10,5 @@ namespace School.DataTransferObject.Teacher
         public string DepartmentName { get; set; }
 
 
-
     }
 }

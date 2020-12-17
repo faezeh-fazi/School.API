@@ -23,6 +23,7 @@ namespace School.Services.Main
             var departments = _context
                   .Department
                   .Include(x => x.Courses)
+                  .Include(x=>x.Users)
                   .AsQueryable();
 
 

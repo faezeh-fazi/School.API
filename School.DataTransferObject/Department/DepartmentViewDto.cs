@@ -7,6 +7,7 @@ namespace School.DataTransferObject.Department
    public class DepartmentViewDto
     {
         public string Name { get; set; }
+
     
     }
 }
