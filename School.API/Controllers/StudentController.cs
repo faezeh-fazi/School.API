@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,15 +26,17 @@ namespace School.API.Controllers
         private SignInManager<User> _signInManager;
         private UserManager<User> _userManager;
         private LinkGenerator _link;
+        private IWebHostEnvironment _hostEnvironment;
 
         public StudentController(IUserService context, IMapper mapper, SignInManager<User> signInManager,
-            UserManager<User> userManager, LinkGenerator link)
+            UserManager<User> userManager, LinkGenerator link, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
             _mapper = mapper;
             _signInManager = signInManager;
             _userManager = userManager;
             _link = link;
+            _hostEnvironment = hostEnvironment;
         }
 
         [HttpGet("/GetAllDepartmentStudents")]
@@ -61,7 +65,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles ="Student")]
         [HttpPut("/api/UpdateStudent")]
-        public async Task<IActionResult> UpdateStudent(string userId, [FromBody] StudentUpdateDto stdUpdate)
+        public async Task<IActionResult> UpdateStudent([FromBody]string userId, [FromBody] StudentUpdateDto stdUpdate)
         {
 
             if (stdUpdate == null)
@@ -70,22 +74,22 @@ namespace School.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
+            string uniqueFileName = UploadedFile(stdUpdate);
+
             var user = await _context.GetUserById(userId);
 
             var role = await _userManager.IsInRoleAsync(user, "Student");
-            if (role == true)
-            {
+        
 
                 user.Name = stdUpdate.StudentName;
-
+            user.Photo = uniqueFileName;
                 var result = await _context.EditUser(user);
 
                 if (result == false)
                     return BadRequest();
 
                 return Ok(stdUpdate);
-            }
-            return BadRequest("Couldnt update ");
+            
 
         }
         [Authorize(Roles ="Admin")]
@@ -151,6 +155,23 @@ namespace School.API.Controllers
                         });
 
             }
+        }
+
+        private string UploadedFile(StudentUpdateDto model)
+        {
+            string uniqueFileName = null;
+
+            if (model.Photo != null)
+            {
+                string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.Photo.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
         }
     }
 }

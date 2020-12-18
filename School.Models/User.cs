@@ -11,7 +11,7 @@ namespace School.Models
 
         public string Name { get; set; }
         public double GPA { get; set; }
-
+        public string Photo { get; set; }
 
         public int? DepartmentId { get; set; }
 

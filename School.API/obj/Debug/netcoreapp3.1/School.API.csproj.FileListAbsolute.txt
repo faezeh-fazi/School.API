@@ -112,9 +112,6 @@ C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.Mo
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.csprojAssemblyReference.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.AssemblyInfoInputs.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.AssemblyInfo.cs
-C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.csproj.CoreCompileInputs.cache
-C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.RazorTargetAssemblyInfo.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.csproj.CopyComplete
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\staticwebassets\School.API.StaticWebAssets.Manifest.cache
@@ -123,3 +120,6 @@ C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.AP
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.pdb
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.genruntimeconfig.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.API.xml
+C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.csproj.CoreCompileInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cache
