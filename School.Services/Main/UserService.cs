@@ -27,7 +27,7 @@ namespace School.Services.Main
         }
 
 
-        public async Task<IEnumerable<User>> GetAllDepartmentStudents(int departmentId)
+        public async Task<PagedList<User>> GetAllDepartmentStudents( int departmentId, ResourceParameter parameter)
         {
 
 
@@ -35,37 +35,31 @@ namespace School.Services.Main
             var v1 = await _context.Users.Include(x=>x.Department).ToListAsync();
 
 
-            return v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId);
+            var departmentstu = v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId).AsQueryable();
 
-
-            //var role = await _context.Users.Include(x => x.Department).Where(x => x.DepartmentId == departmentId).ToListAsync();
-            //GetAllStudents();
-            //return role;
+            if (!string.IsNullOrEmpty(parameter.NameFilter))
+            {
+                departmentstu = departmentstu.Where(x => x.Name.Contains(parameter.NameFilter));
+            }
+            return await PagedList<User>.CreateAsync(departmentstu, parameter.PageNumber, parameter.PageSize);
 
         }
 
-/*        public async Task<IEnumerable<User>> GetAllStudents()
-        {
-            var role = await _userManager.GetUsersInRoleAsync("Student");
-       
-            return role;
 
-        }*/
-        public async Task<IEnumerable<User>> GetAllDepartmentTeachers(int departmentId)
+        public async Task<PagedList<User>> GetAllDepartmentTeachers(int departmentId, ResourceParameter parameter)
         {
             var role = await _userManager.GetUsersInRoleAsync("Teacher");
             var v1 = await _context.Users.Include(x => x.Department).ToListAsync();
 
-            return v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId);
+            var departmenttea = v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId).AsQueryable();
+
+            if (!string.IsNullOrEmpty(parameter.NameFilter))
+            {
+                departmenttea = departmenttea.Where(x => x.Name.Contains(parameter.NameFilter));
+            }
+            return await PagedList<User>.CreateAsync(departmenttea, parameter.PageNumber, parameter.PageSize);
 
         }
- /*       public async Task<IEnumerable<User>> GetAllTeachers()
-        {
-            var role = await _userManager.GetUsersInRoleAsync("Teacher");
-
-            return role;
-
-       }*/
 
 
         public async Task<User> GetUserById(string UserId)

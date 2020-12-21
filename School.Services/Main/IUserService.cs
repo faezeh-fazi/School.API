@@ -9,9 +9,9 @@ namespace School.Services.Main
     {
         Task<bool> AddUser(User user, string password, string role);
         Task<bool> EditUser(User user);
-   
-        Task<IEnumerable<User>> GetAllDepartmentStudents(int departmentId);
-        Task<IEnumerable<User>> GetAllDepartmentTeachers(int departmentId);
+
+        Task<PagedList<User>> GetAllDepartmentStudents(int departmentId, ResourceParameter parameter);
+        Task<PagedList<User>> GetAllDepartmentTeachers(int departmentId, ResourceParameter parameter);
         Task<User> GetUserById(string UserId);
         Task<bool> RemoveUser(User user);
     }

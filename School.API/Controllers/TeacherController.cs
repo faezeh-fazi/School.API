@@ -37,13 +37,29 @@ namespace School.API.Controllers
         }
 
         [HttpGet("/GetAllDepartmentTeachers")]
-        public async Task<IActionResult> GetAllTeachers(int DepartmentId)
+        public async Task<IActionResult> GetAllTeachers(int DepartmentId, ResourceParameter parameter)
         {
 
-            var teachers = await _context.GetAllDepartmentTeachers(DepartmentId);
-            var mapping = _mapper.Map<IEnumerable<TeacherViewDto>>(teachers);
+            var teachers = await _context.GetAllDepartmentTeachers(DepartmentId, parameter);
+            var prevLink = teachers.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
+            var nextPage = teachers.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
+            var pageInfo = new PagingDto
+            {
+                totalCount = teachers.Count,
+                pageSize = teachers.PageSize,
+                totalPages = teachers.TotalPages,
+                currentPages = teachers.CurrentPage,
+                PrevLink = prevLink,
+                nextLink = nextPage,
+            };
+            var DepartmentMapping = new TeacherPaging
+            {
+                Teachers = _mapper.Map<IEnumerable<TeacherViewDto>>(teachers),
+                PagingInfo = pageInfo
+            };
 
-            return Ok(mapping);
+            return Ok(DepartmentMapping);
+
         }
 
         [HttpGet("/api/getTeacher/{userId}")]
@@ -142,10 +158,7 @@ namespace School.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (TeacherId != HttpContext.GetUserId())
-                return BadRequest("Not Allow to Add Department!");
-            else
-            {
+         
                 if (creationDto.DepartmentId == null)
                     return BadRequest("Add Department");
 
@@ -156,7 +169,7 @@ namespace School.API.Controllers
                 var result = await _context.EditUser(Entity);
                 return Ok(result);
 
-            }
+            
         }
             private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
             {
