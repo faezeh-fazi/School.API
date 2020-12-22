@@ -853,6 +853,28 @@
           }
         }
       },
+      "MockQueryable.Core/3.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MockQueryable.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MockQueryable.Core.dll": {}
+        }
+      },
+      "MockQueryable.EntityFrameworkCore/3.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.1",
+          "MockQueryable.Core": "3.1.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/MockQueryable.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MockQueryable.EntityFrameworkCore.dll": {}
+        }
+      },
       "Newtonsoft.Json/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -2085,10 +2107,7 @@
         },
         "runtime": {
           "bin/placeholder/School.Helpers.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "School.Models/1.0.0": {
         "type": "project",
@@ -3201,6 +3220,34 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "MockQueryable.Core/3.1.3": {
+      "sha512": "77umsr96u6nT/a+1G0U+jToVTl/jaMddBv+W4X8yu8/pj6HGBdc8j/aCkXCmiJuob6mM10gptGq/x5GO/eIXFg==",
+      "type": "package",
+      "path": "mockqueryable.core/3.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/MockQueryable.Core.dll",
+        "logo.png",
+        "mockqueryable.core.3.1.3.nupkg.sha512",
+        "mockqueryable.core.nuspec"
+      ]
+    },
+    "MockQueryable.EntityFrameworkCore/3.1.3": {
+      "sha512": "3KNpNttlxMtFQVdk82lrefxKiZ5lKNVVuDQdqnJZDTMZ1LlalDAnuP2kkXswCb7eAy5a/UEZgo4D9iVPVhLPfQ==",
+      "type": "package",
+      "path": "mockqueryable.entityframeworkcore/3.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/MockQueryable.EntityFrameworkCore.dll",
+        "logo.png",
+        "mockqueryable.entityframeworkcore.3.1.3.nupkg.sha512",
+        "mockqueryable.entityframeworkcore.nuspec"
       ]
     },
     "Newtonsoft.Json/10.0.1": {
@@ -7013,6 +7060,7 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.10",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
       "Microsoft.Extensions.DependencyInjection >= 3.1.10",
+      "MockQueryable.EntityFrameworkCore >= 3.1.3",
       "School.DataAccess >= 1.0.0",
       "School.DataTransferObject >= 1.0.0",
       "School.Helpers >= 1.0.0",
@@ -7082,6 +7130,10 @@
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
             "version": "[3.1.10, )"
+          },
+          "MockQueryable.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[3.1.3, )"
           },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",

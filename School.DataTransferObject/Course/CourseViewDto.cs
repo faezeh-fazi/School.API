@@ -7,6 +7,7 @@ namespace School.DataTransferObject.Course
 {
    public class CourseViewDto
     {
+        public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string CourseDescription { get; set; }
         public string StartDate { get; set; }

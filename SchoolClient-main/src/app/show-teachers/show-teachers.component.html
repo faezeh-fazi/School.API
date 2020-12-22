@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <p class="display-4">
+    <a [routerLink]="['/Departments']" class="text-dark">
+      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+    </a>
+  </p>
+  <ng-container *ngIf="!!teachers?.length">
+    <table class="table" >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teachers; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ teacher.teacherName }}</td>
+          <td>
+            <a href="mailto:{{ teacher.email }}"> {{ teacher.email }}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ul *ngIf="!teachers?.length">
+    <li class="text-danger">there is no data to show!</li>
+  </ul>
+</div>

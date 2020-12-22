@@ -32,7 +32,8 @@ namespace School.Services.Main
 
 
             var role = await _userManager.GetUsersInRoleAsync("Student");
-            var v1 = await _context.Users.Include(x=>x.Department).ToListAsync();
+
+            var v1 = await _context.Users.Include(x => x.Department).ToListAsync();
 
 
             var departmentstu = v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId).AsQueryable();

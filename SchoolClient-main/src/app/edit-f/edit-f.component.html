@@ -1,0 +1,10 @@
+<input
+            [class.is-invalid]="
+            formname.get('name').errors && formname.get('name').touched
+            "
+            formControlName="name"
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Name"
+          />

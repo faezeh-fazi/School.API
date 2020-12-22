@@ -7,6 +7,7 @@ namespace School.DataTransferObject.Teacher
 {
    public class TeacherViewDto
     {
+        public string TeacherId { get; set; }
         public string TeacherName { get; set; }
         [EmailAddress]
         public string Email { get; set; }

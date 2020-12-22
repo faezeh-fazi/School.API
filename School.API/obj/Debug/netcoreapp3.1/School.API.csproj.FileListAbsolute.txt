@@ -9,6 +9,7 @@ C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.AP
 C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.API.runtimeconfig.dev.json
 C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.API.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.API.pdb
+C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.API.xml
 C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\FluentValidation.dll
@@ -119,7 +120,3 @@ C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\staticweb
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.pdb
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.genruntimeconfig.cache
-C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\School.API.xml
-C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.csproj.CoreCompileInputs.cache
-C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cache

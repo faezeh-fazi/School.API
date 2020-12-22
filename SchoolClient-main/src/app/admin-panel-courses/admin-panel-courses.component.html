@@ -1,0 +1,354 @@
+<h1 class="h3 mb-4 text-gray-800">Courses</h1>
+
+<div class="container mb-5">
+  <a
+    [routerLink]="['/admin-panel/Courses']"
+    *ngIf="mode"
+    (click)="mode = !mode"
+    class="btn btn-danger btn-icon-split mr-5"
+  >
+    <span class="icon text-white-50">
+      <i class="fa fa-times"></i>
+    </span>
+    <span class="text">Cancle</span>
+  </a>
+  <ng-container *ngIf="!mode">
+    <a
+      [routerLink]="['/admin-panel/Courses']"
+      (click)="mode = !mode"
+      class="btn btn-info btn-icon-split mr-5"
+    >
+      <span class="icon text-white-50">
+        <i class="fa fa-plus"></i>
+      </span>
+      <span class="text">Add Courses</span>
+    </a>
+  </ng-container>
+</div>
+
+<ng-container *ngIf="!mode; else elsec">
+  <!-- table -->
+  <div class="card shadow mb-4 border-bottom-info">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold" [ngStyle]="{ color: '#278c76' }">
+        Courses
+      </h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="dataTables_length" id="dataTable_length">
+                <label
+                  >Show
+                  <select
+                    #myselect
+                    [value]="pagingInfop.pageSize"
+                    (change)="
+                      pagingInfop.pageSize = myselect.value;
+                      counter(pagingInfop.currentPages);
+                      GetallDepartments()
+                    "
+                    [routerLink]="['/admin-panel/Courses']"
+                    [queryParams]="{
+                      PageNumber: pagingInfop.currentPages,
+                      PageSize: myselect.value
+                    }"
+                    name="dataTable_length"
+                    aria-controls="dataTable"
+                    class="custom-select custom-select-sm form-control form-control-sm"
+                  >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table
+                class="table table-bordered dataTable"
+                id="dataTable"
+                width="100%"
+                cellspacing="0"
+                role="grid"
+                aria-describedby="dataTable_info"
+                style="width: 100%"
+              >
+                <thead>
+                  <tr class="text-center">
+                    <th rowspan="1" colspan="1">courseName</th>
+                    <th rowspan="1" colspan="1">Description</th>
+                    <th rowspan="1" colspan="1">startDate</th>
+                    <th rowspan="1" colspan="1">endDate</th>
+                    <th rowspan="1" colspan="1">department</th>
+                    <th rowspan="1" colspan="1"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    role="row"
+                    class="odd text-center"
+                    *ngFor="let course of courses; let i = index"
+                  >
+                    <td class="justify-content-center text-center">
+                      {{ course.courseName }}
+                    </td>
+                    <td colspan="1">{{ course.courseDescription }}</td>
+
+                    <td colspan="1">{{ course.startDate }}</td>
+                    <td colspan="1">{{ course.endDate }}</td>
+                    <td colspan="1">{{ course.department }}</td>
+                    <td colspan="1">
+                      <button [routerLink]="[]" class="btn btn-success">
+                        <i class="fa fa-sign-in"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-6">
+              <div
+                class="dataTables_paginate paging_simple_numbers"
+                id="dataTable_paginate"
+              >
+                <ul class="pagination" *ngIf="pagingInfop.totalPages != 1">
+                  <li
+                    [ngClass]="{ disabled: pagingInfop.currentPages === 1 }"
+                    class="paginate_button page-item previous"
+                    id="dataTable_previous"
+                  >
+                    <a
+                      [routerLink]="['/admin-panel/Courses']"
+                      [queryParams]="{
+                        PageNumber: pagingInfop.currentPages - 1,
+                        PageSize: pagingInfop.pageSize
+                      }"
+                      aria-controls="dataTable"
+                      data-dt-idx="0"
+                      tabindex="0"
+                      class="page-link"
+                      [ngClass]="{
+                        'color-green': pagingInfop.currentPages !== 1
+                      }"
+                      >Previous</a
+                    >
+                  </li>
+                  <ng-container
+                    *ngFor="let i of counter(pagingInfop.currentPages)"
+                  >
+                    <ng-container *ngIf="i != '..'; else max">
+                      <li
+                        class="paginate_button page-item"
+                        [ngClass]="{
+                          active: pagingInfop.currentPages === i
+                        }"
+                      >
+                        <a
+                          [routerLink]="['/admin-panel/Courses']"
+                          [queryParams]="{
+                            PageNumber: i,
+                            PageSize: pagingInfop.pageSize
+                          }"
+                          [ngClass]="{
+                            'color-green': pagingInfop.currentPages !== i
+                          }"
+                          aria-controls="dataTable"
+                          data-dt-idx="1"
+                          tabindex="0"
+                          class="page-link"
+                          >{{ i }}</a
+                        >
+                      </li>
+                    </ng-container>
+                    <ng-template #max>
+                      <li class="paginate_button page-item disabled">
+                        <a
+                          [ngClass]="{
+                            'color-green': pagingInfop.currentPages !== i
+                          }"
+                          aria-controls="dataTable"
+                          data-dt-idx="1"
+                          tabindex="0"
+                          class="page-link"
+                          >{{ i }}</a
+                        >
+                      </li>
+                    </ng-template>
+                  </ng-container>
+                  <li
+                    [ngClass]="{
+                      disabled:
+                        pagingInfop.currentPages === pagingInfop.totalPages
+                    }"
+                    class="paginate_button page-item next"
+                    id="dataTable_next"
+                  >
+                    <a
+                      [ngClass]="{
+                        'color-green':
+                          pagingInfop.currentPages !== pagingInfop.totalPages
+                      }"
+                      [routerLink]="['/admin-panel/Courses']"
+                      [queryParams]="{
+                        PageNumber: pagingInfop.currentPages + 1,
+                        PageSize: pagingInfop.pageSize
+                      }"
+                      aria-controls="dataTable"
+                      data-dt-idx="7"
+                      tabindex="0"
+                      class="page-link"
+                      >Next</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of table -->
+</ng-container>
+<ng-template #elsec>
+  <div class="card shadow mb-4 border-bottom-success">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Add Courses</h6>
+    </div>
+
+    <div class="card-body">
+      <form (ngSubmit)="add_item()" [formGroup]="addForm">
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              formControlName="courseName"
+              [class.is-invalid]="
+                addForm.get('courseName').errors &&
+                addForm.get('courseName').touched
+              "
+              class="form-control"
+              placeholder="Course Name"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              formControlName="courseDescription"
+              [class.is-invalid]="
+                addForm.get('courseDescription').errors &&
+                addForm.get('courseDescription').touched
+              "
+              class="form-control"
+              placeholder="Description"
+            />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <input
+              type="number"
+              formControlName="courseCredit"
+              [class.is-invalid]="
+                addForm.get('courseCredit').errors &&
+                addForm.get('courseCredit').touched
+              "
+              class="form-control"
+              placeholder="Credit"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="number"
+              formControlName="day"
+              [class.is-invalid]="
+                addForm.get('day').errors && addForm.get('day').touched
+              "
+              class="form-control"
+              placeholder="day"
+            />
+          </div>
+          <div class="col">
+            <input
+              formControlName="departmentId"
+              [class.is-invalid]="
+                addForm.get('departmentId').errors &&
+                addForm.get('departmentId').touched
+              "
+              type="number"
+              class="form-control"
+              placeholder="Department Id"
+            />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <label for="Start-Date">Start Date:</label>
+            <input
+              formControlName="startDate"
+              [class.is-invalid]="
+                addForm.get('startDate').errors &&
+                addForm.get('startDate').touched
+              "
+              type="date"
+              class="form-control"
+              name="Start-Date"
+            />
+          </div>
+          <div class="col">
+            <label for="Start-Time">Start Time:</label>
+            <input
+              formControlName="startTime"
+              [class.is-invalid]="
+                addForm.get('startTime').errors &&
+                addForm.get('startTime').touched
+              "
+              type="time"
+              class="form-control"
+              name="Start-Time"
+            />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <label for="End-Date">End Date:</label>
+            <input
+              formControlName="endDate"
+              [class.is-invalid]="
+                addForm.get('endDate').errors && addForm.get('endDate').touched
+              "
+              type="date"
+              class="form-control"
+              name="End-Date"
+            />
+          </div>
+          <div class="col">
+            <label for="End-Time">End Time:</label>
+            <input
+              formControlName="endTime"
+              [class.is-invalid]="
+                addForm.get('endTime').errors && addForm.get('endTime').touched
+              "
+              type="time"
+              class="form-control"
+              placeholder="End-Time"
+            />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

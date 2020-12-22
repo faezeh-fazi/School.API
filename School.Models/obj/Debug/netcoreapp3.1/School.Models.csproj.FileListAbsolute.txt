@@ -6,4 +6,3 @@ C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School
 C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csproj.CoreCompileInputs.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.pdb
-C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csprojAssemblyReference.cache

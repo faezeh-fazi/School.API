@@ -1,7 +1,6 @@
 C:\Users\UTOB-PC\Desktop\School.API\School.Services\obj\Debug\netcoreapp3.1\School.Services.csprojAssemblyReference.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.Services\obj\Debug\netcoreapp3.1\School.Services.AssemblyInfoInputs.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.Services\obj\Debug\netcoreapp3.1\School.Services.AssemblyInfo.cs
-C:\Users\UTOB-PC\Desktop\School.API\School.Services\obj\Debug\netcoreapp3.1\School.Services.csproj.CoreCompileInputs.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.Services\bin\Debug\netcoreapp3.1\School.Services.deps.json
 C:\Users\UTOB-PC\Desktop\School.API\School.Services\bin\Debug\netcoreapp3.1\School.Services.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.Services\bin\Debug\netcoreapp3.1\School.Services.pdb

@@ -6,4 +6,3 @@ C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\Schoo
 C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csproj.CoreCompileInputs.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.pdb
-C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csprojAssemblyReference.cache

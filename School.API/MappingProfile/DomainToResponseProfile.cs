@@ -37,7 +37,8 @@ namespace School.API.MappingProfile
             CreateMap<StudentCreationDto, User>();
             CreateMap<StudentUpdateDto, User>();
             CreateMap<User, StudentViewDto>()
-                .ForMember(dest => dest.StudentName, m => m.MapFrom(src => src.Name))
+/*                .ForMember(dest => dest.StudentId, m => m.MapFrom(src => src.Id))
+*/                .ForMember(dest => dest.StudentName, m => m.MapFrom(src => src.Name))
                  .ForMember(dest => dest.DepartmentName, m => m.MapFrom(src => src.Department.Name));
 
 
@@ -46,6 +47,7 @@ namespace School.API.MappingProfile
             CreateMap<TeacherCreationDto, User>();
             CreateMap<TeacherUpdateDto, User>();
             CreateMap<User, TeacherViewDto>()
+                .ForMember(dest => dest.TeacherId, m => m.MapFrom(src => src.Id))
                 .ForMember(dest => dest.TeacherName, m => m.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Email, m => m.MapFrom(src => src.Email));
 
@@ -58,6 +60,7 @@ namespace School.API.MappingProfile
             CreateMap<CourseCreationDto, Course>();       
             CreateMap<CourseUpdateDto, Course>();
             CreateMap<Course, CourseViewDto>()
+                .ForMember(dest => dest.CourseId, m => m.MapFrom(src => src.Id))
                 .ForMember(dest => dest.StartDate, m => m.MapFrom(src => src.StartDate.ToString("MM/dd/yyyy")))
                 .ForMember(dest => dest.EndDate, m => m.MapFrom(src => src.EndDate.ToString("MM/dd/yyyy")))
                 .ForMember(dest => dest.Department, m => m.MapFrom(src => src.Department.Name));

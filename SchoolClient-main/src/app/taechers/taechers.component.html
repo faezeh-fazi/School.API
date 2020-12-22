@@ -1,0 +1,21 @@
+<div class="container mt-5">
+
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">show teachers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dep of departments; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ dep.name }}</td>
+        <td><a [routerLink]="['/all-teachers']" [queryParams]="{ DepartmentId: dep.departmentId}">show teachers</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
