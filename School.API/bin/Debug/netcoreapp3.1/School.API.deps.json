@@ -38,6 +38,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.10",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.10",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "3.1.10",
+          "MockQueryable.EntityFrameworkCore": "3.1.3",
           "NLog.Web.AspNetCore": "4.9.3",
           "School.Contracts": "1.0.0",
           "School.DataAccess": "1.0.0",
@@ -1316,6 +1317,32 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
+      "MockQueryable.Core/3.1.3": {
+        "runtime": {
+          "lib/netstandard2.0/MockQueryable.Core.dll": {
+            "assemblyVersion": "3.1.3.0",
+            "fileVersion": "3.1.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/MockQueryable.Core.dll": {}
+        }
+      },
+      "MockQueryable.EntityFrameworkCore/3.1.3": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.10",
+          "MockQueryable.Core": "3.1.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MockQueryable.EntityFrameworkCore.dll": {
+            "assemblyVersion": "3.1.3.0",
+            "fileVersion": "3.1.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/MockQueryable.EntityFrameworkCore.dll": {}
+        }
+      },
       "Newtonsoft.Json/12.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -2211,6 +2238,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.10",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "3.1.10",
+          "MockQueryable.EntityFrameworkCore": "3.1.3",
           "School.DataAccess": "1.0.0",
           "School.DataTransferObject": "1.0.0",
           "School.Helpers": "1.0.0",
@@ -4393,6 +4421,20 @@
       "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
+    },
+    "MockQueryable.Core/3.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-77umsr96u6nT/a+1G0U+jToVTl/jaMddBv+W4X8yu8/pj6HGBdc8j/aCkXCmiJuob6mM10gptGq/x5GO/eIXFg==",
+      "path": "mockqueryable.core/3.1.3",
+      "hashPath": "mockqueryable.core.3.1.3.nupkg.sha512"
+    },
+    "MockQueryable.EntityFrameworkCore/3.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3KNpNttlxMtFQVdk82lrefxKiZ5lKNVVuDQdqnJZDTMZ1LlalDAnuP2kkXswCb7eAy5a/UEZgo4D9iVPVhLPfQ==",
+      "path": "mockqueryable.entityframeworkcore/3.1.3",
+      "hashPath": "mockqueryable.entityframeworkcore.3.1.3.nupkg.sha512"
     },
     "Newtonsoft.Json/12.0.2": {
       "type": "package",

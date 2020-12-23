@@ -120,3 +120,8 @@ C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\staticweb
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.pdb
 C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.genruntimeconfig.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\MockQueryable.Core.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.API\bin\Debug\netcoreapp3.1\MockQueryable.EntityFrameworkCore.dll
+C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.csproj.CoreCompileInputs.cache
+C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\UTOB-PC\Desktop\School.API\School.API\obj\Debug\netcoreapp3.1\School.API.MvcApplicationPartsAssemblyInfo.cache
