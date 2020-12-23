@@ -40,28 +40,12 @@ namespace School.API.Controllers
         }
 
         [HttpGet("/GetAllDepartmentStudents")]
-        public async Task<IActionResult> GetAllStudents(int DepartmentId, ResourceParameter parameter)
+        public async Task<IActionResult> GetAllStudents(int DepartmentId)
         {
 
-            var students = await _context.GetAllDepartmentStudents(DepartmentId, parameter);
-            var prevLink = students.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
-            var nextPage = students.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
-            var pageInfo = new PagingDto
-            {
-                totalCount = students.Count,
-                pageSize = students.PageSize,
-                totalPages = students.TotalPages,
-                currentPages = students.CurrentPage,
-                PrevLink = prevLink,
-                nextLink = nextPage,
-            };
-            var DepartmentMapping = new StudentPaging
-            {
-                Students = _mapper.Map<IEnumerable<StudentViewDto>>(students),
-                PagingInfo = pageInfo
-            };
-
-            return Ok(DepartmentMapping);
+            var students = await _context.GetAllDepartmentStudents(DepartmentId);
+            var mapping = _mapper.Map<IEnumerable<StudentViewDto>>(students);
+            return Ok(mapping);
 
         }
 
