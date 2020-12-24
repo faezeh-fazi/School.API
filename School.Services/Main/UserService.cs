@@ -44,19 +44,14 @@ namespace School.Services.Main
         }
 
 
-        public async Task<PagedList<User>> GetAllDepartmentTeachers(int departmentId, ResourceParameter parameter)
+        public async Task<IEnumerable<User>> GetAllDepartmentTeachers(int departmentId)
         {
             var role = await _userManager.GetUsersInRoleAsync("Teacher");
             var v1 = await _context.Users.Include(x => x.Department).ToListAsync();
 
-            var departmenttea = v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId).AsQueryable();
+            var departmenttea =  v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId).ToList();
 
-            if (!string.IsNullOrEmpty(parameter.NameFilter))
-            {
-                departmenttea = departmenttea.Where(x => x.Name.Contains(parameter.NameFilter));
-            }
-            return await PagedList<User>.CreateAsync(departmenttea, parameter.PageNumber, parameter.PageSize);
-
+            return departmenttea;
         }
 
 

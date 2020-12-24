@@ -264,6 +264,7 @@ namespace School.API.Controllers
                     return _link.GetPathByAction(HttpContext, "GetAllCourses",
                         values: new
                         {
+
                             searcQuery = parameter.SearchQuery,
                             pageNumber = parameter.PageNumber - 1,
                             PageSize = parameter.PageSize,

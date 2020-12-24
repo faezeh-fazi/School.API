@@ -37,29 +37,13 @@ namespace School.API.Controllers
         }
 
         [HttpGet("/GetAllDepartmentTeachers")]
-        public async Task<IActionResult> GetAllTeachers(int DepartmentId, ResourceParameter parameter)
+        public async Task<IActionResult> GetAllTeachers(int DepartmentId)
         {
 
-            var teachers = await _context.GetAllDepartmentTeachers(DepartmentId, parameter);
-            var prevLink = teachers.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
-            var nextPage = teachers.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
-            var pageInfo = new PagingDto
-            {
-                totalCount = teachers.Count,
-                pageSize = teachers.PageSize,
-                totalPages = teachers.TotalPages,
-                currentPages = teachers.CurrentPage,
-                PrevLink = prevLink,
-                nextLink = nextPage,
-            };
-            var DepartmentMapping = new TeacherPaging
-            {
-                Teachers = _mapper.Map<IEnumerable<TeacherViewDto>>(teachers),
-                PagingInfo = pageInfo
-            };
+            var teachers = await _context.GetAllDepartmentTeachers(DepartmentId);
+            var mapping = _mapper.Map<IEnumerable<TeacherViewDto>>(teachers);
 
-            return Ok(DepartmentMapping);
-
+            return Ok(mapping);
         }
 
         [HttpGet("/api/getTeacher/{userId}")]

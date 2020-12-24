@@ -22,7 +22,7 @@
         public string NameFilter { get; set; }
         public string Fields { get; set; }
         public string Status { get; set; }
-        public string Job { get; set; }
+        public string Department { get; set; }
         public string OrderBy { get; set; } = "Id";
         public string SortingStatus { get; set; }
         public string SearchQuery { get; set; }
