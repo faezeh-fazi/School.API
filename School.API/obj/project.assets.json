@@ -2495,10 +2495,7 @@
         },
         "runtime": {
           "bin/placeholder/School.Contracts.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "School.DataAccess/1.0.0": {
         "type": "project",
@@ -2516,10 +2513,7 @@
         },
         "runtime": {
           "bin/placeholder/School.DataAccess.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "School.DataTransferObject/1.0.0": {
         "type": "project",
@@ -2533,10 +2527,7 @@
         },
         "runtime": {
           "bin/placeholder/School.DataTransferObject.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "School.Helpers/1.0.0": {
         "type": "project",
@@ -2566,10 +2557,7 @@
         },
         "runtime": {
           "bin/placeholder/School.LoggingService.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "School.Models/1.0.0": {
         "type": "project",
@@ -2582,10 +2570,7 @@
         },
         "runtime": {
           "bin/placeholder/School.Models.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "School.Services/1.0.0": {
         "type": "project",
@@ -2606,10 +2591,7 @@
         },
         "runtime": {
           "bin/placeholder/School.Services.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -8295,23 +8277,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\UTOB-PC\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\soheyl-pc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.API\\School.API.csproj",
+      "projectUniqueName": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.API\\School.API.csproj",
       "projectName": "School.API",
-      "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.API\\School.API.csproj",
-      "packagesPath": "C:\\Users\\UTOB-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.API\\obj\\",
+      "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.API\\School.API.csproj",
+      "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\UTOB-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8324,20 +8302,20 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Contracts\\School.Contracts.csproj": {
-              "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Contracts\\School.Contracts.csproj"
+            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
+              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj"
             },
-            "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.DataAccess\\School.DataAccess.csproj"
+            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
             },
-            "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Helpers\\School.Helpers.csproj": {
-              "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Helpers\\School.Helpers.csproj"
+            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
+              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
             },
-            "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
-              "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.LoggingService\\School.LoggingService.csproj"
+            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
+              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj"
             },
-            "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Services\\School.Services.csproj": {
-              "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Services\\School.Services.csproj"
+            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Services\\School.Services.csproj": {
+              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Services\\School.Services.csproj"
             }
           }
         }
@@ -8442,7 +8420,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
