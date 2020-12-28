@@ -37,28 +37,12 @@ namespace School.API.Controllers
         }
 
         [HttpGet("/GetAllDepartmentTeachers")]
-        public async Task<IActionResult> GetAllTeachers(int DepartmentId, ResourceParameter parameter)
+        public async Task<IActionResult> GetAllTeachers(int DepartmentId)
         {
 
-            var teachers = await _context.GetAllDepartmentTeachers(DepartmentId, parameter);
-            var prevLink = teachers.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.PreviousPage) : null;
-            var nextPage = teachers.HasPrevious ? CreateTestListResourceUri(parameter, ResourceUriType.NextPage) : null;
-            var pageInfo = new PagingDto
-            {
-                totalCount = teachers.Count,
-                pageSize = teachers.PageSize,
-                totalPages = teachers.TotalPages,
-                currentPages = teachers.CurrentPage,
-                PrevLink = prevLink,
-                nextLink = nextPage,
-            };
-            var DepartmentMapping = new TeacherPaging
-            {
-                Teachers = _mapper.Map<IEnumerable<TeacherViewDto>>(teachers),
-                PagingInfo = pageInfo
-            };
-
-            return Ok(DepartmentMapping);
+            var teachers = await _context.GetAllDepartmentTeachers(DepartmentId);
+            var mapping = _mapper.Map<IEnumerable<TeacherViewDto>>(teachers);
+            return Ok(mapping);
 
         }
 
@@ -74,7 +58,7 @@ namespace School.API.Controllers
                 return Ok(mapping);
             return BadRequest("User does not exist!");
         }
-        [Authorize(Roles="Teacher")]
+        [Authorize(Roles = "Teacher")]
         [HttpPut("/api/UpdateTeacher")]
         public async Task<IActionResult> UpdateTeacher(string userId, [FromBody] TeacherUpdateDto tchUpdate)
         {
@@ -112,7 +96,7 @@ namespace School.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            
+
 
             var user = _mapper.Map<User>(creationDto);
 
@@ -158,58 +142,58 @@ namespace School.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-         
-                if (creationDto.DepartmentId == null)
-                    return BadRequest("Add Department");
 
-                var Entity = await _context.GetUserById(TeacherId);
+            if (creationDto.DepartmentId == null)
+                return BadRequest("Add Department");
 
-                Entity.DepartmentId = creationDto.DepartmentId;
+            var Entity = await _context.GetUserById(TeacherId);
 
-                var result = await _context.EditUser(Entity);
-                return Ok(result);
+            Entity.DepartmentId = creationDto.DepartmentId;
 
-            
+            var result = await _context.EditUser(Entity);
+            return Ok(result);
+
+
         }
-            private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
+        private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
+        {
+            switch (type)
             {
-                switch (type)
-                {
-                    case ResourceUriType.PreviousPage:
-                        return _link.GetPathByAction(HttpContext, "GetAllTeachers",
-                            values: new
-                            {
-                                searcQuery = parameter.SearchQuery,
-                                pageNumber = parameter.PageNumber - 1,
-                                PageSize = parameter.PageSize,
-                            });
+                case ResourceUriType.PreviousPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllTeachers",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber - 1,
+                            PageSize = parameter.PageSize,
+                        });
 
-                    case ResourceUriType.NextPage:
-                        return _link.GetPathByAction(HttpContext, "GetAllTeachers",
-                            values: new
-                            {
-                                searcQuery = parameter.SearchQuery,
-                                pageNumber = parameter.PageNumber + 1,
-                                PageSize = parameter.PageSize,
-                            });
-                    case ResourceUriType.Current:
-                        return _link.GetPathByAction(HttpContext, "GetAllTeachers",
-                            values: new
-                            {
-                                searcQuery = parameter.SearchQuery,
-                                pageNumber = parameter.PageNumber,
-                                PageSize = parameter.PageSize,
-                            });
-                    default:
-                        return _link.GetPathByAction(HttpContext, "GetAllTeachers",
-                            values: new
-                            {
-                                searcQuery = parameter.SearchQuery,
-                                pageNumber = parameter.PageNumber,
-                                PageSize = parameter.PageSize,
-                            });
-                }
-                }
+                case ResourceUriType.NextPage:
+                    return _link.GetPathByAction(HttpContext, "GetAllTeachers",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber + 1,
+                            PageSize = parameter.PageSize,
+                        });
+                case ResourceUriType.Current:
+                    return _link.GetPathByAction(HttpContext, "GetAllTeachers",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+                default:
+                    return _link.GetPathByAction(HttpContext, "GetAllTeachers",
+                        values: new
+                        {
+                            searcQuery = parameter.SearchQuery,
+                            pageNumber = parameter.PageNumber,
+                            PageSize = parameter.PageSize,
+                        });
+            }
+        }
 
     }
 }

@@ -27,7 +27,7 @@ namespace School.Services.Main
         }
 
 
-        public async Task<IEnumerable<User>> GetAllDepartmentStudents( int departmentId)
+        public async Task<IEnumerable<User>> GetAllDepartmentStudents(int departmentId)
         {
 
 
@@ -44,18 +44,17 @@ namespace School.Services.Main
         }
 
 
-        public async Task<PagedList<User>> GetAllDepartmentTeachers(int departmentId, ResourceParameter parameter)
+        public async Task<IEnumerable<User>> GetAllDepartmentTeachers(int departmentId)
         {
             var role = await _userManager.GetUsersInRoleAsync("Teacher");
+
             var v1 = await _context.Users.Include(x => x.Department).ToListAsync();
 
-            var departmenttea = v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId).AsQueryable();
 
-            if (!string.IsNullOrEmpty(parameter.NameFilter))
-            {
-                departmenttea = departmenttea.Where(x => x.Name.Contains(parameter.NameFilter));
-            }
-            return await PagedList<User>.CreateAsync(departmenttea, parameter.PageNumber, parameter.PageSize);
+            var departmentTeacher = v1.Where(x => role.Any(y => y.Id == x.Id) && x.DepartmentId == departmentId).ToList();
+
+
+            return departmentTeacher;
 
         }
 
@@ -64,7 +63,7 @@ namespace School.Services.Main
         {
             return await _context
                 .User
-                .Include(x=>x.Department)
+                .Include(x => x.Department)
                 .FirstOrDefaultAsync(x => x.Id == UserId);
         }
 
@@ -98,7 +97,7 @@ namespace School.Services.Main
             return await SaveAll();
         }
 
-       
+
         public async Task<bool> RemoveUser(User user)
         {
             _context.User.Remove(user);

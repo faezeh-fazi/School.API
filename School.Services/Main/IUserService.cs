@@ -11,7 +11,7 @@ namespace School.Services.Main
         Task<bool> EditUser(User user);
 
         Task<IEnumerable<User>> GetAllDepartmentStudents(int departmentId);
-        Task<PagedList<User>> GetAllDepartmentTeachers(int departmentId, ResourceParameter parameter);
+        Task<IEnumerable<User>> GetAllDepartmentTeachers(int departmentId);
         Task<User> GetUserById(string UserId);
         Task<bool> RemoveUser(User user);
     }

@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ITeacherView } from '../Interfaces/app-interface';
 import { UserService } from '../user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-show-teachers',
@@ -11,7 +11,11 @@ import { UserService } from '../user.service';
   styleUrls: ['./show-teachers.component.css'],
 })
 export class ShowTeachersComponent implements OnInit {
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private toaster: ToasterService
+  ) {}
   base_url = 'https://localhost:5001/';
   teachers: Array<ITeacherView>;
   departmentId: string;
@@ -31,7 +35,7 @@ export class ShowTeachersComponent implements OnInit {
           this.teachers = response;
         },
         (error) => {
-          console.log(error);
+          this.toaster.error(error.error, 'Error');
         }
       );
   }

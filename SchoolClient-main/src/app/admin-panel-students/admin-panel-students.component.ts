@@ -66,7 +66,8 @@ export class AdminPanelStudentsComponent implements OnInit {
             console.log(response)
           },
           (error) => {
-            console.log(error);
+            this.toastr.error(error.error, 'Error');
+
           }
         );
     });
@@ -117,14 +118,13 @@ export class AdminPanelStudentsComponent implements OnInit {
         })
         .subscribe(
           (response) => {
-            console.log(response);
             this.mode = true;
             this.toastr.success('Department has successfully added', 'added');
             this.addForm.reset();
           },
           (error) => {
             this.toastr.error(error.error, 'Error');
-            // console.log(error.error)
+
           }
         );
     } else {
@@ -159,7 +159,6 @@ export class AdminPanelStudentsComponent implements OnInit {
         },
         (error) => {
           this.toastr.error(error.error, 'Error');
-          console.log(error.error);
         }
       );
   }

@@ -48,7 +48,6 @@ export class UserService {
     this.currentToken$.subscribe((res: ILoginResp) => {
       console.log(res);
       if (this.tokenService.tokenExpired) {
-        console.log(this.tokenService.getUserId(res.token));
         console.log('token is valid');
       } else {
         console.log('token has expired');

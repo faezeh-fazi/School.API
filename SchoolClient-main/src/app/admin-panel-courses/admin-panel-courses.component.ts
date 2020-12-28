@@ -73,7 +73,6 @@ export class AdminPanelCoursesComponent implements OnInit {
     };
     temp.startTime = temp.startDate + 'T' + temp.startTime + ':42.346Z';
     temp.endTime = temp.endDate + 'T' + temp.endTime + ':42.346Z';
-    console.log(JSON.stringify(temp));
     if (this.addForm.hasError) {
       this.http
         .post(this.base_url + 'AddCourse', temp, {
@@ -81,18 +80,15 @@ export class AdminPanelCoursesComponent implements OnInit {
         })
         .subscribe(
           (response) => {
-            console.log(response);
             this.mode = false;
             this.addForm.reset();
             this.toastr.success('Course has successfully added', 'added');
           },
           (error) => {
             this.toastr.error(error.error, 'Error');
-            console.log(error.error);
           }
         );
     } else {
-      console.log(this.addForm.errors);
       this.toastr.error('form is not valid', 'Error');
     }
   }
@@ -128,7 +124,7 @@ export class AdminPanelCoursesComponent implements OnInit {
             }
           },
           (error) => {
-            console.log(error);
+            this.toastr.error(error.error, 'error');
           }
         );
     });
