@@ -11,6 +11,7 @@ namespace School.DataTransferObject.TeacherTimeTable
         public string Day { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }
+        public string CourseId { get; set; }
 
     }
 }
