@@ -62,9 +62,9 @@ namespace School.API.Controllers
             return BadRequest("User does not exist!");
         }
 
-        [Authorize(Roles ="Student")]
-        [HttpPut("/api/UpdateStudent")]
-        public async Task<IActionResult> UpdateStudent([FromBody]string userId, [FromBody] StudentUpdateDto stdUpdate)
+/*        [Authorize(Roles ="Student")]
+*/        [HttpPut("/api/UpdateStudent")]
+        public async Task<IActionResult> UpdateStudent([FromQuery]string userId, [FromForm] StudentUpdateDto stdUpdate)
         {
 
             if (stdUpdate == null)
@@ -87,7 +87,7 @@ namespace School.API.Controllers
                 if (result == false)
                     return BadRequest();
 
-                return Ok(stdUpdate);
+                return Ok("updated");
             
 
         }
