@@ -62,9 +62,9 @@ namespace School.API.Controllers
             return BadRequest("User does not exist!");
         }
 
-        [Authorize(Roles ="Student")]
+        [Authorize(Roles = "Student")]
         [HttpPut("/api/UpdateStudent")]
-        public async Task<IActionResult> UpdateStudent([FromBody]string userId, [FromBody] StudentUpdateDto stdUpdate)
+        public async Task<IActionResult> UpdateStudent([FromForm] StudentUpdateDto stdUpdate)
         {
 
             if (stdUpdate == null)
@@ -75,23 +75,23 @@ namespace School.API.Controllers
 
             string uniqueFileName = UploadedFile(stdUpdate);
 
-            var user = await _context.GetUserById(userId);
+            var user = await _context.GetUserById(HttpContext.GetUserId());
 
             var role = await _userManager.IsInRoleAsync(user, "Student");
-        
 
-                user.Name = stdUpdate.StudentName;
+
+            user.Name = stdUpdate.StudentName;
             user.Photo = uniqueFileName;
-                var result = await _context.EditUser(user);
+            var result = await _context.EditUser(user);
 
-                if (result == false)
-                    return BadRequest();
+            if (result == false)
+                return BadRequest();
 
-                return Ok(stdUpdate);
-            
+            return Ok(stdUpdate);
+
 
         }
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("/api/StudentRegister")]
         [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
         public async Task<IActionResult> AddStudent([FromBody] StudentCreationDto creationDto)
