@@ -9,7 +9,7 @@ import { ILoginResp, IUSer } from './Interfaces/app-interface';
 export class TokenService {
   constructor() {}
 
-  public tokenExpired(token: string) {
+  public tokenExpired(token: string): boolean {
     const expiry = JSON.parse(atob(token.split('.')[1])).exp;
     return Math.floor(new Date().getTime() / 1000) >= expiry;
   }
@@ -18,15 +18,13 @@ export class TokenService {
     return jwtDecode(token);
   }
 
-
-  public toUser(response:ILoginResp):IUSer{
-    let userdata = jwtDecode(response.token)
-     const user:IUSer = {
-
-       id:userdata["id"],
-       role:userdata["role"][0],
-       name:userdata["name"]
-     }
-    return(user)
+  public toUser(response: ILoginResp): IUSer {
+    let userdata = jwtDecode(response.token);
+    const user: IUSer = {
+      id: userdata['id'],
+      role: userdata['role'][0],
+      name: userdata['name'],
+    };
+    return user;
   }
 }

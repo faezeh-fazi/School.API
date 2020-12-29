@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ITeacherView } from '../Interfaces/app-interface';
 import { IDepartment } from '../Interfaces/Department-interface';
 
 @Component({
@@ -13,14 +12,14 @@ export class TaechersComponent implements OnInit {
   departments: IDepartment;
   constructor(private http: HttpClient) {}
   ngOnInit(): void {
-    this.get_Teachers();
+    this.get_departments();
   }
 
   show() {
     console.log(this.departments);
   }
 
-  get_Teachers() {
+  get_departments() {
     this.http.get(this.base_url + 'GetAlldepartments').subscribe(
       (response: IDepartment) => {
         this.departments = response['departments'];
