@@ -62,9 +62,10 @@ namespace School.API.Controllers
             return BadRequest("User does not exist!");
         }
 
-/*        [Authorize(Roles ="Student")]
-*/        [HttpPut("/api/UpdateStudent")]
-        public async Task<IActionResult> UpdateStudent([FromQuery]string userId, [FromForm] StudentUpdateDto stdUpdate)
+        /*        [Authorize(Roles ="Student")]
+        */
+        [HttpPut("/api/UpdateStudent")]
+        public async Task<IActionResult> UpdateStudent([FromQuery] string userId, [FromForm] StudentUpdateDto stdUpdate)
         {
 
             if (stdUpdate == null)
@@ -78,20 +79,20 @@ namespace School.API.Controllers
             var user = await _context.GetUserById(userId);
 
             var role = await _userManager.IsInRoleAsync(user, "Student");
-        
 
-                user.Name = stdUpdate.StudentName;
+
+            user.Name = stdUpdate.StudentName;
             user.Photo = uniqueFileName;
-                var result = await _context.EditUser(user);
+            var result = await _context.EditUser(user);
 
-                if (result == false)
-                    return BadRequest();
+            if (result == false)
+                return BadRequest();
 
-                return Ok("updated");
-            
+            return Ok("updated");
+
 
         }
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("/api/StudentRegister")]
         [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
         public async Task<IActionResult> AddStudent([FromBody] StudentCreationDto creationDto)
@@ -114,6 +115,14 @@ namespace School.API.Controllers
 
             await _signInManager.SignInAsync(user, isPersistent: false);
             return Ok(result);
+        }
+        [HttpGet("/api/getStudentprofile/{userId}")]
+        public async Task<IActionResult> getfile(string userId)
+        {
+            var student = await _context.GetUserById(userId);
+            string path = "./wwwroot/images/" + student.Photo;
+            Byte[] b = System.IO.File.ReadAllBytes(path);
+            return File(b, "image/jpeg");
         }
         private string CreateTestListResourceUri(ResourceParameter parameter, ResourceUriType type)
         {
@@ -172,5 +181,7 @@ namespace School.API.Controllers
             }
             return uniqueFileName;
         }
+
+
     }
 }

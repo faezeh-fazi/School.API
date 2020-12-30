@@ -20,7 +20,7 @@ using School.Models;
 
 namespace School.API.MappingProfile
 {
-    public class DomainToResponseProfile:Profile
+    public class DomainToResponseProfile : Profile
     {
         public DomainToResponseProfile()
         {
@@ -39,7 +39,8 @@ namespace School.API.MappingProfile
             CreateMap<User, StudentViewDto>()
 /*                .ForMember(dest => dest.StudentId, m => m.MapFrom(src => src.Id))
 */                .ForMember(dest => dest.StudentName, m => m.MapFrom(src => src.Name))
-                 .ForMember(dest => dest.DepartmentName, m => m.MapFrom(src => src.Department.Name));
+                 .ForMember(dest => dest.DepartmentName, m => m.MapFrom(src => src.Department.Name))
+                 .ForMember(dest => dest.Photo, m => m.MapFrom(src => src.Photo));
 
 
 
@@ -57,7 +58,7 @@ namespace School.API.MappingProfile
             CreateMap<TeacherDepartmentDto, User>();
 
 
-            CreateMap<CourseCreationDto, Course>();       
+            CreateMap<CourseCreationDto, Course>();
             CreateMap<CourseUpdateDto, Course>();
             CreateMap<Course, CourseViewDto>()
                 .ForMember(dest => dest.CourseId, m => m.MapFrom(src => src.Id))
@@ -87,7 +88,7 @@ namespace School.API.MappingProfile
             CreateMap<StudentCourse, StudentCourseViewDto>()
                   .ForMember(dest => dest.CourseName, m => m.MapFrom(src => src.Course.CourseName))
                   .ForMember(dest => dest.CourseDescription, m => m.MapFrom(src => src.Course.CourseDescription));
-               
+
 
 
             CreateMap<TeacherCourseCreationDto, Course>();
@@ -97,7 +98,7 @@ namespace School.API.MappingProfile
             CreateMap<StudentCourseCreationDto, Course>();
             CreateMap<StudentCourseUpdateDto, Course>();
             CreateMap<Course, StudentCourseViewDto>();
-                
+
             CreateMap<CourseCreationDto, TimeTable>();
             CreateMap<CourseUpdateDto, TimeTable>();
             CreateMap<TimeTable, CourseViewDto>()
@@ -105,7 +106,7 @@ namespace School.API.MappingProfile
              .ForMember(dest => dest.CourseDescription, m => m.MapFrom(src => src.Course.CourseDescription))
                 .ForMember(dest => dest.StartDate, m => m.MapFrom(src => src.Course.StartDate.ToString("MM/dd/yyyy")))
                 .ForMember(dest => dest.EndDate, m => m.MapFrom(src => src.Course.EndDate.ToString("MM/dd/yyyy")));
-            
+
 
 
             CreateMap<TimeTableCreationDto, TimeTable>();
@@ -200,9 +201,8 @@ namespace School.API.MappingProfile
 
 
             CreateMap<AdminCreationDto, User>();
-            
+
         }
     }
 }
 
- 
