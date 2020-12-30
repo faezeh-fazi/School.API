@@ -38,7 +38,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpGet("allStudentCourses/{UserId}")]
-        public async Task<IActionResult> GetAllStudentCourses(string UserId,ResourceParameter parameter)
+        public async Task<IActionResult> GetAllStudentCourses(string UserId, ResourceParameter parameter)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("Not Allowed!");
@@ -66,18 +66,22 @@ namespace School.API.Controllers
         }
 
 
-        [Authorize(Roles = "Student")]
+        [Authorize(Roles = "Student,Admin")]
         [HttpGet("StudentTimeTable/{UserId}")]
         public async Task<IActionResult> GetStudentTimeTable(string UserId)
         {
-            if (UserId != HttpContext.GetUserId())
+            if (UserId == HttpContext.GetUserId() || HttpContext.User.IsInRole("Admin"))
+            {
+                var courses = await _timeTableService.GetStudentTimeTable(UserId);
+
+                var mapping = _mapper.Map<IEnumerable<StudentTimetableViewDto>>(courses);
+                return Ok(mapping);
+            }
+            else
+            {
                 return BadRequest("Not Allowed!");
 
-            var courses = await _timeTableService.GetStudentTimeTable(UserId);
-
-            var mapping = _mapper.Map<IEnumerable<StudentTimetableViewDto>>(courses);
-            return Ok(mapping);
-
+            }
         }
 
         [Authorize(Roles = "Student")]
@@ -95,7 +99,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpGet("StudentGrades/")]
-        public async Task<IActionResult> GetStudentGrades(string UserId,ResourceParameter parameter)
+        public async Task<IActionResult> GetStudentGrades(string UserId, ResourceParameter parameter)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("You are not allow to see the Grades!");
@@ -107,7 +111,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpGet("GetStudentTranscript/")]
-        public async Task<IActionResult> GetStudentTranscript(string StudentId,ResourceParameter parameter)
+        public async Task<IActionResult> GetStudentTranscript(string StudentId, ResourceParameter parameter)
         {
             if (StudentId != HttpContext.GetUserId())
                 return BadRequest("You are not allow to see the Transcript!");
@@ -167,7 +171,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Student")]
         [HttpPost("/api/Add/StudentCourse/")]
-        public async Task<IActionResult> AddStudentCourse([FromBody] StudentCourseCreationDto course,ResourceParameter parameter)
+        public async Task<IActionResult> AddStudentCourse([FromBody] StudentCourseCreationDto course, ResourceParameter parameter)
         {
             if (course == null)
                 return BadRequest();

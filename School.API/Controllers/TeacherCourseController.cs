@@ -30,7 +30,7 @@ namespace School.API.Controllers
         private IStudentCourseService _studentCourseService;
         private LinkGenerator _link;
 
-        public TeacherCourseController(IStudentCourseService studentCourseService, ITeacherCourseService context, 
+        public TeacherCourseController(IStudentCourseService studentCourseService, ITeacherCourseService context,
             IMapper mapper, IUserService userService, ITimeTableService timeTableService, LinkGenerator link)
         {
             _context = context;
@@ -43,7 +43,7 @@ namespace School.API.Controllers
 
         [Authorize(Roles = "Teacher")]
         [HttpGet("allTeacherCourses/{UserId}")]
-        public async Task<IActionResult> GetAllTeacherCourses(string UserId,ResourceParameter parameter)
+        public async Task<IActionResult> GetAllTeacherCourses(string UserId, ResourceParameter parameter)
         {
             if (UserId != HttpContext.GetUserId())
                 return BadRequest("Not Allowed!");
@@ -70,17 +70,22 @@ namespace School.API.Controllers
 
         }
 
-        [Authorize(Roles = "Teacher")]
+        [Authorize(Roles = "Teacher,Admin")]
         [HttpGet("TeacherTimeTable/{UserId}")]
         public async Task<IActionResult> GetTeacherTimeTable(string UserId)
         {
-            if (UserId != HttpContext.GetUserId())
+            if (UserId == HttpContext.GetUserId() || HttpContext.User.IsInRole("Admin"))
+            {
+                var courses = await _timeTableService.GetTeacherTimeTable(UserId);
+
+                var mapping = _mapper.Map<IEnumerable<TeacherTimetableViewDto>>(courses);
+
+                return Ok(mapping);
+            }
+            else
+            {
                 return BadRequest("Not Allowed!");
-            var courses = await _timeTableService.GetTeacherTimeTable(UserId);
-
-            var mapping = _mapper.Map<IEnumerable<TeacherTimetableViewDto>>(courses);
-
-            return Ok(mapping);
+            }
         }
 
         [Authorize(Roles = "Teacher")]
@@ -250,4 +255,3 @@ namespace School.API.Controllers
         }
     }
 }
- 
