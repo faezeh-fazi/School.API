@@ -7,3 +7,12 @@ C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\Schoo
 C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.pdb
 C:\Users\UTOB-PC\Desktop\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csprojAssemblyReference.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\bin\Debug\netcoreapp3.1\School.Helpers.deps.json
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\bin\Debug\netcoreapp3.1\School.Helpers.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\bin\Debug\netcoreapp3.1\School.Helpers.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csprojAssemblyReference.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.AssemblyInfoInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.AssemblyInfo.cs
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.pdb

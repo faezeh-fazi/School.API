@@ -63,7 +63,9 @@ namespace School.API.MappingProfile
                 .ForMember(dest => dest.CourseId, m => m.MapFrom(src => src.Id))
                 .ForMember(dest => dest.StartDate, m => m.MapFrom(src => src.StartDate.ToString("MM/dd/yyyy")))
                 .ForMember(dest => dest.EndDate, m => m.MapFrom(src => src.EndDate.ToString("MM/dd/yyyy")))
-                .ForMember(dest => dest.Department, m => m.MapFrom(src => src.Department.Name));
+                .ForMember(dest => dest.Department, m => m.MapFrom(src => src.Department.Name))
+                .ForMember(dest => dest.StartTime, m => m.MapFrom(src => src.StartTime.ToString("hh:mm tt")))
+                .ForMember(dest => dest.EndTime, m => m.MapFrom(src => src.EndTime.ToString("hh:mm tt")));
 
 
 

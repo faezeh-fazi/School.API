@@ -6,3 +6,12 @@ C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\Sch
 C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csproj.CoreCompileInputs.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.deps.json
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csprojAssemblyReference.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.AssemblyInfoInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.AssemblyInfo.cs
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.pdb

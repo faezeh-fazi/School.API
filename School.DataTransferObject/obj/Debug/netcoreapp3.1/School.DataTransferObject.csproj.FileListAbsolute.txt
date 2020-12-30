@@ -10,3 +10,15 @@ C:\Users\UTOB-PC\Desktop\School.API\School.DataTransferObject\obj\Debug\netcorea
 C:\Users\UTOB-PC\Desktop\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.Models.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.Models.pdb
 C:\Users\UTOB-PC\Desktop\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csproj.CopyComplete
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.DataTransferObject.deps.json
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.DataTransferObject.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.DataTransferObject.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.Models.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.Models.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csprojAssemblyReference.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.AssemblyInfoInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.AssemblyInfo.cs
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csproj.CoreCompileInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csproj.CopyComplete
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.pdb

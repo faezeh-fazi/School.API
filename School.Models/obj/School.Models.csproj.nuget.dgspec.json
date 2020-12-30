@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Models\\School.Models.csproj": {}
+    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Models\\School.Models.csproj": {
+    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Models\\School.Models.csproj",
+        "projectUniqueName": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj",
         "projectName": "School.Models",
-        "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Models\\School.Models.csproj",
-        "packagesPath": "C:\\Users\\UTOB-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Models\\obj\\",
+        "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+        "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UTOB-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,14 +54,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

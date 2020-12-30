@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Helpers\\School.Helpers.csproj": {}
+    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Helpers\\School.Helpers.csproj": {
+    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Helpers\\School.Helpers.csproj",
+        "projectUniqueName": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
         "projectName": "School.Helpers",
-        "projectPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Helpers\\School.Helpers.csproj",
-        "packagesPath": "C:\\Users\\UTOB-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UTOB-PC\\Desktop\\School.API\\School.Helpers\\obj\\",
+        "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
+        "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\UTOB-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

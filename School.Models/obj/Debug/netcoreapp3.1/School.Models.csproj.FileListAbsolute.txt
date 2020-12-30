@@ -6,3 +6,12 @@ C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School
 C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csproj.CoreCompileInputs.cache
 C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.dll
 C:\Users\UTOB-PC\Desktop\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.deps.json
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.AssemblyInfoInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.AssemblyInfo.cs
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csproj.CoreCompileInputs.cache
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.dll
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.pdb
+C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csprojAssemblyReference.cache
