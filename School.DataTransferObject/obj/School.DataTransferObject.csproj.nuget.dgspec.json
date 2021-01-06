@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {}
+    "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
+    "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
+        "projectUniqueName": "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
         "projectName": "School.DataTransferObject",
-        "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
+        "projectPath": "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataTransferObject\\obj\\",
+        "outputPath": "D:\\projects-test\\School.API\\School.DataTransferObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,9 +26,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
-                "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj"
+              "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
+                "projectPath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj"
               }
             }
           }
@@ -41,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -62,18 +64,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
+    "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+        "projectUniqueName": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj",
         "projectName": "School.Models",
-        "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+        "projectPath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Models\\obj\\",
+        "outputPath": "D:\\projects-test\\School.API\\School.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,6 +90,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -99,6 +102,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -120,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

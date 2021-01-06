@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {}
+    "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
+    "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
+        "projectUniqueName": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
         "projectName": "School.Helpers",
-        "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
+        "projectPath": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\obj\\",
+        "outputPath": "D:\\projects-test\\School.API\\School.Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -66,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

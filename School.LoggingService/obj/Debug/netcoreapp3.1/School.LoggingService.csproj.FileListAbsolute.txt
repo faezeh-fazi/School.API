@@ -22,3 +22,15 @@ C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.LoggingService\obj\De
 C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CopyComplete
 C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.dll
 C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.pdb
+D:\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.deps.json
+D:\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.dll
+D:\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.pdb
+D:\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.Contracts.dll
+D:\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.Contracts.pdb
+D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csprojAssemblyReference.cache
+D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.AssemblyInfoInputs.cache
+D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.AssemblyInfo.cs
+D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CoreCompileInputs.cache
+D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CopyComplete
+D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.dll
+D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.pdb

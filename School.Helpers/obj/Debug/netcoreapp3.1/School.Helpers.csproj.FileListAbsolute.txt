@@ -16,3 +16,12 @@ C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\net
 C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csproj.CoreCompileInputs.cache
 C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.dll
 C:\Users\soheyl-pc\Desktop\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.pdb
+D:\projects-test\School.API\School.Helpers\bin\Debug\netcoreapp3.1\School.Helpers.deps.json
+D:\projects-test\School.API\School.Helpers\bin\Debug\netcoreapp3.1\School.Helpers.dll
+D:\projects-test\School.API\School.Helpers\bin\Debug\netcoreapp3.1\School.Helpers.pdb
+D:\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csprojAssemblyReference.cache
+D:\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.AssemblyInfoInputs.cache
+D:\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.AssemblyInfo.cs
+D:\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.csproj.CoreCompileInputs.cache
+D:\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.dll
+D:\projects-test\School.API\School.Helpers\obj\Debug\netcoreapp3.1\School.Helpers.pdb

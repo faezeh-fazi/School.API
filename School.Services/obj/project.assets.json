@@ -7065,11 +7065,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Services\\School.Services.csproj",
+      "projectUniqueName": "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj",
       "projectName": "School.Services",
-      "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Services\\School.Services.csproj",
+      "projectPath": "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj",
       "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Services\\obj\\",
+      "outputPath": "D:\\projects-test\\School.API\\School.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7084,15 +7084,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
+            "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
+              "projectPath": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
             },
-            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
-              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj"
+            "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
+              "projectPath": "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj"
             },
-            "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
-              "projectPath": "C:\\Users\\soheyl-pc\\Desktop\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
+            "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
+              "projectPath": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
             }
           }
         }
@@ -7105,6 +7106,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -7146,7 +7148,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
