@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {}
+    "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj": {}
   },
   "projects": {
-    "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj",
         "projectName": "School.Models",
-        "projectPath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.Models\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

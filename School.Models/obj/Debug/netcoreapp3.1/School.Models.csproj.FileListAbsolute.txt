@@ -24,3 +24,12 @@ D:\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.
 D:\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csproj.CoreCompileInputs.cache
 D:\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.dll
 D:\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.pdb
+D:\projects\projects-test\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.deps.json
+D:\projects\projects-test\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.dll
+D:\projects\projects-test\School.API\School.Models\bin\Debug\netcoreapp3.1\School.Models.pdb
+D:\projects\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csprojAssemblyReference.cache
+D:\projects\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.AssemblyInfoInputs.cache
+D:\projects\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.AssemblyInfo.cs
+D:\projects\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.csproj.CoreCompileInputs.cache
+D:\projects\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.dll
+D:\projects\projects-test\School.API\School.Models\obj\Debug\netcoreapp3.1\School.Models.pdb

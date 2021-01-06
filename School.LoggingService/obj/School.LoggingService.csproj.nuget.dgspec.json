@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {}
+    "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {}
   },
   "projects": {
-    "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
         "projectName": "School.Contracts",
-        "projectPath": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.Contracts\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
         "projectName": "School.LoggingService",
-        "projectPath": "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.LoggingService\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,8 +88,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj"
               }
             }
           }

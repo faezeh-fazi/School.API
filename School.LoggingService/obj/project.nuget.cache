@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0scDth5bJsqJcFb0ieHw58+kK+hD2ComQS8Hr/Uyg9ChbDYFLx1q7BhXwshbO4JT8G3b7jr8ftFctOGLwTreWg==",
+  "dgSpecHash": "3hJGPX7QoweQDC7YSqloHbfEmquhZ2v5se5Ok9Eq2r14qEs0GHECGI8urwMsJdU0fHu5/U7CGB7GdfMUGleiUQ==",
   "success": true,
-  "projectFilePath": "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
+  "projectFilePath": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\soheyl-pc\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\soheyl-pc\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6SRjakNJOEtFEW7roXnl9O3MSaeqL+yH9l/e+iZtQ/EqdIZJdExCDdaQ6HnmE+rNlobFD1F+yZ8CUfQYyPSsZA==",
+  "dgSpecHash": "Sq+jIEKbH+vmNOpWEM5QCWozG/lg36GTCfklNH7Ni609+JOVsluqmws1NqRCIaxs54h4q3TLE9NKqetKHr+5og==",
   "success": true,
-  "projectFilePath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+  "projectFilePath": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\soheyl-pc\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\soheyl-pc\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

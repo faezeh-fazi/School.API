@@ -3585,11 +3585,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
+      "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
       "projectName": "School.Contracts",
-      "projectPath": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
+      "projectPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
       "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-      "outputPath": "D:\\projects-test\\School.API\\School.Contracts\\obj\\",
+      "outputPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

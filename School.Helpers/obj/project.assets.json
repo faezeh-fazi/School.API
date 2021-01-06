@@ -5054,11 +5054,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
+      "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
       "projectName": "School.Helpers",
-      "projectPath": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
+      "projectPath": "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
       "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-      "outputPath": "D:\\projects-test\\School.API\\School.Helpers\\obj\\",
+      "outputPath": "D:\\projects\\projects-test\\School.API\\School.Helpers\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

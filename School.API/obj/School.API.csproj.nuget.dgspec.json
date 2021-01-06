@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects-test\\School.API\\School.API\\School.API.csproj": {}
+    "D:\\projects\\projects-test\\School.API\\School.API\\School.API.csproj": {}
   },
   "projects": {
-    "D:\\projects-test\\School.API\\School.API\\School.API.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.API\\School.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.API\\School.API.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.API\\School.API.csproj",
         "projectName": "School.API",
-        "projectPath": "D:\\projects-test\\School.API\\School.API\\School.API.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.API\\School.API.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.API\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,20 +28,20 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj"
               },
-              "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
               },
-              "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
               },
-              "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj"
               },
-              "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Services\\School.Services.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Services\\School.Services.csproj"
               }
             }
           }
@@ -151,14 +151,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
         "projectName": "School.Contracts",
-        "projectPath": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.Contracts\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -211,14 +211,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
         "projectName": "School.DataAccess",
-        "projectPath": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.DataAccess\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -235,8 +235,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj"
               }
             }
           }
@@ -303,14 +303,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
         "projectName": "School.DataTransferObject",
-        "projectPath": "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.DataTransferObject\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -327,8 +327,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj"
               }
             }
           }
@@ -367,14 +367,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
         "projectName": "School.Helpers",
-        "projectPath": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.Helpers\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -435,14 +435,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
         "projectName": "School.LoggingService",
-        "projectPath": "D:\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\School.LoggingService.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.LoggingService\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.LoggingService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -459,8 +459,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Contracts\\School.Contracts.csproj"
               }
             }
           }
@@ -503,14 +503,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj",
         "projectName": "School.Models",
-        "projectPath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.Models\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -563,14 +563,14 @@
         }
       }
     },
-    "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj": {
+    "D:\\projects\\projects-test\\School.API\\School.Services\\School.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj",
+        "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Services\\School.Services.csproj",
         "projectName": "School.Services",
-        "projectPath": "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj",
+        "projectPath": "D:\\projects\\projects-test\\School.API\\School.Services\\School.Services.csproj",
         "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\projects-test\\School.API\\School.Services\\obj\\",
+        "outputPath": "D:\\projects\\projects-test\\School.API\\School.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -587,14 +587,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
               },
-              "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj"
               },
-              "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
-                "projectPath": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
+              "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
+                "projectPath": "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
               }
             }
           }

@@ -24,3 +24,12 @@ D:\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Cont
 D:\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csproj.CoreCompileInputs.cache
 D:\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.dll
 D:\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.pdb
+D:\projects\projects-test\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.deps.json
+D:\projects\projects-test\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.dll
+D:\projects\projects-test\School.API\School.Contracts\bin\Debug\netcoreapp3.1\School.Contracts.pdb
+D:\projects\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csprojAssemblyReference.cache
+D:\projects\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.AssemblyInfoInputs.cache
+D:\projects\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.AssemblyInfo.cs
+D:\projects\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.csproj.CoreCompileInputs.cache
+D:\projects\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.dll
+D:\projects\projects-test\School.API\School.Contracts\obj\Debug\netcoreapp3.1\School.Contracts.pdb

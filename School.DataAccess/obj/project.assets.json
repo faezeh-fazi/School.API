@@ -6587,11 +6587,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
+      "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
       "projectName": "School.DataAccess",
-      "projectPath": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
+      "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj",
       "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-      "outputPath": "D:\\projects-test\\School.API\\School.DataAccess\\obj\\",
+      "outputPath": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6608,8 +6608,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
-              "projectPath": "D:\\projects-test\\School.API\\School.Models\\School.Models.csproj"
+            "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj": {
+              "projectPath": "D:\\projects\\projects-test\\School.API\\School.Models\\School.Models.csproj"
             }
           }
         }

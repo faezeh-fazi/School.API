@@ -7065,11 +7065,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj",
+      "projectUniqueName": "D:\\projects\\projects-test\\School.API\\School.Services\\School.Services.csproj",
       "projectName": "School.Services",
-      "projectPath": "D:\\projects-test\\School.API\\School.Services\\School.Services.csproj",
+      "projectPath": "D:\\projects\\projects-test\\School.API\\School.Services\\School.Services.csproj",
       "packagesPath": "C:\\Users\\soheyl-pc\\.nuget\\packages\\",
-      "outputPath": "D:\\projects-test\\School.API\\School.Services\\obj\\",
+      "outputPath": "D:\\projects\\projects-test\\School.API\\School.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\soheyl-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7086,14 +7086,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
-              "projectPath": "D:\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
+            "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj": {
+              "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataAccess\\School.DataAccess.csproj"
             },
-            "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
-              "projectPath": "D:\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj"
+            "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj": {
+              "projectPath": "D:\\projects\\projects-test\\School.API\\School.DataTransferObject\\School.DataTransferObject.csproj"
             },
-            "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
-              "projectPath": "D:\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
+            "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj": {
+              "projectPath": "D:\\projects\\projects-test\\School.API\\School.Helpers\\School.Helpers.csproj"
             }
           }
         }

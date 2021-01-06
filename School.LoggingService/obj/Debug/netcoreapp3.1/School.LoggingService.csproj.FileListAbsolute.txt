@@ -34,3 +34,15 @@ D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School
 D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CopyComplete
 D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.dll
 D:\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.pdb
+D:\projects\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.deps.json
+D:\projects\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.dll
+D:\projects\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.LoggingService.pdb
+D:\projects\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.Contracts.dll
+D:\projects\projects-test\School.API\School.LoggingService\bin\Debug\netcoreapp3.1\School.Contracts.pdb
+D:\projects\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csprojAssemblyReference.cache
+D:\projects\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.AssemblyInfoInputs.cache
+D:\projects\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.AssemblyInfo.cs
+D:\projects\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CoreCompileInputs.cache
+D:\projects\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.csproj.CopyComplete
+D:\projects\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.dll
+D:\projects\projects-test\School.API\School.LoggingService\obj\Debug\netcoreapp3.1\School.LoggingService.pdb

@@ -34,3 +34,15 @@ D:\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\Sc
 D:\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csproj.CopyComplete
 D:\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.dll
 D:\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.pdb
+D:\projects\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.DataTransferObject.deps.json
+D:\projects\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.DataTransferObject.dll
+D:\projects\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.DataTransferObject.pdb
+D:\projects\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.Models.dll
+D:\projects\projects-test\School.API\School.DataTransferObject\bin\Debug\netcoreapp3.1\School.Models.pdb
+D:\projects\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csprojAssemblyReference.cache
+D:\projects\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.AssemblyInfoInputs.cache
+D:\projects\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.AssemblyInfo.cs
+D:\projects\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csproj.CoreCompileInputs.cache
+D:\projects\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.csproj.CopyComplete
+D:\projects\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.dll
+D:\projects\projects-test\School.API\School.DataTransferObject\obj\Debug\netcoreapp3.1\School.DataTransferObject.pdb
