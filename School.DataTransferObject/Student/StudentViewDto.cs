@@ -12,6 +12,8 @@ namespace School.DataTransferObject.Student
         public string StudentName { get; set; }
         public string DepartmentName { get; set; }
         public string Photo { get; set; }
+        public string UserName { get; set; }
+        
 
 
 

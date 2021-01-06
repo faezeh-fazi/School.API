@@ -2072,7 +2072,10 @@
         },
         "runtime": {
           "bin/placeholder/School.DataAccess.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.DataTransferObject/1.0.0": {
         "type": "project",
@@ -2086,7 +2089,10 @@
         },
         "runtime": {
           "bin/placeholder/School.DataTransferObject.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.Helpers/1.0.0": {
         "type": "project",
@@ -2101,7 +2107,10 @@
         },
         "runtime": {
           "bin/placeholder/School.Helpers.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.Models/1.0.0": {
         "type": "project",
@@ -2114,7 +2123,10 @@
         },
         "runtime": {
           "bin/placeholder/School.Models.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -7144,6 +7156,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

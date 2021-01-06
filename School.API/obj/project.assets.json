@@ -2495,7 +2495,10 @@
         },
         "runtime": {
           "bin/placeholder/School.Contracts.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.DataAccess/1.0.0": {
         "type": "project",
@@ -2513,7 +2516,10 @@
         },
         "runtime": {
           "bin/placeholder/School.DataAccess.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.DataTransferObject/1.0.0": {
         "type": "project",
@@ -2527,7 +2533,10 @@
         },
         "runtime": {
           "bin/placeholder/School.DataTransferObject.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.Helpers/1.0.0": {
         "type": "project",
@@ -2542,7 +2551,10 @@
         },
         "runtime": {
           "bin/placeholder/School.Helpers.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.LoggingService/1.0.0": {
         "type": "project",
@@ -2557,7 +2569,10 @@
         },
         "runtime": {
           "bin/placeholder/School.LoggingService.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.Models/1.0.0": {
         "type": "project",
@@ -2570,7 +2585,10 @@
         },
         "runtime": {
           "bin/placeholder/School.Models.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "School.Services/1.0.0": {
         "type": "project",
@@ -2591,7 +2609,10 @@
         },
         "runtime": {
           "bin/placeholder/School.Services.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
